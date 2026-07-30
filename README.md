@@ -1,53 +1,85 @@
 <p align="center">
-  <img src="dark.svg#gh-dark-mode-only" alt="Bhuvan Kumar H M Hero Banner" width="100%" />
-  <img src="light.svg#gh-light-mode-only" alt="Bhuvan Kumar H M Hero Banner" width="100%" />
+  <img src="dark.svg#gh-dark-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
+  <img src="light.svg#gh-light-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
 </p>
 
 <br/>
 
-## 🎯 About Me
+<div align="center">
+
+# ☠️ BHUVAN KUMAR H M
+### **Cybersecurity Engineering Student | Penetration Testing | Malware Analysis | AI Security Research**
+📍 **Karnataka, India** | ✉️ **[bhuvankumarhm25@gmail.com](mailto:bhuvankumarhm25@gmail.com)** | 🌐 **[LinkedIn](https://linkedin.com/in/bhuvan-kumar-hm)** | ⚡ **[GitHub](https://github.com/B2Kmonster)**
+
+</div>
+
+---
+
+## 🎯 ABOUT ME
 
 ```bash
 cat << 'EOF'
-> Cybersecurity Engineering Student specializing in Penetration Testing, AI Security Research, & Malware Analysis.
-> Certified Ethical Hacker (CEH) with hands-on expertise in Red Team operations & Enterprise SOC automation pipelines.
+> Computer Science Engineering student specializing in Cybersecurity, AI Security Research, & Red Team Operations.
+> Certified Ethical Hacker (CEH) with hands-on expertise in penetration testing, malware reverse engineering, 
+  automated SOC incident triage, Windows post-exploitation, & embedded hardware security.
+> Active developer & maintainer of open-source security frameworks, LLM prompt injection testbeds, & lab automation.
 EOF
 ```
 
-### 🎯 Professional Summary
-Computer Science Engineering student specializing in **Cybersecurity**, **AI Security Research**, and **Red Team Operations**. Hands-on experience in penetration testing, malware analysis, automated SOC incident triage, Windows post-exploitation, and hardware security. Certified Ethical Hacker (CEH) with a strong track record of engineering open-source security research tools, custom LLM security frameworks, and enterprise-grade lab automation pipelines.
+---
+
+## 🛠️ TECHNICAL SKILLS & TOOLKIT
+
+```
++------------------------+-----------------------------------------------------------------------------------+
+| CATEGORY               | SECURITY TOOLS & STACK                                                            |
++------------------------+-----------------------------------------------------------------------------------+
+| Programming & Scripts  | Python, Bash, PowerShell, C / C++, SQL, JavaScript, HTML5 / CSS3                  |
+| Cybersecurity Domains   | Penetration Testing, Malware Analysis, Reverse Eng, SOC Triage, AI Security       |
+| Offensive Security     | Burp Suite Pro, OWASP ZAP, Nmap, Wireshark, Metasploit, SQLMap, Gobuster, Hydra    |
+| Reverse & Forensics    | Ghidra, x64dbg, Sysmon, VirusTotal API, AbuseIPDB API, MobSF, Aircrack-ng         |
+| SIEM & Automation      | Wazuh SIEM/XDR, n8n Workflow Automation, Docker, Ollama / OpenAI LLM APIs         |
+| Platforms & OS         | Kali Linux, Ubuntu Server, Windows Server 2025 (Active Directory DC), TryHackMe   |
++------------------------+-----------------------------------------------------------------------------------+
+```
 
 ---
 
-### 🛠️ Technical Skills
+## 🚀 FEATURED SECURITY PROJECTS
 
-- **Programming & Scripting:** Python, Bash, PowerShell, C/C++, JavaScript, HTML5/CSS3, SQL
-- **Cybersecurity Domains:** Penetration Testing, Vulnerability Assessment, Malware Analysis & Reverse Engineering, SOC Triage & Incident Response, Red Teaming, LLM & AI Security, Hardware/IoT Security, Active Directory Exploitation
-- **Security Tools:** Burp Suite Professional, OWASP ZAP, Nmap, Wireshark, Metasploit, SQLMap, Gobuster, Hydra, John the Ripper, Aircrack-ng, MobSF, Sysmon
-- **SIEM & Automation:** Wazuh SIEM/XDR, n8n Workflow Engine, Docker, AbuseIPDB API, VirusTotal API, Ollama / OpenAI API
-- **Platforms & OS:** Kali Linux, Ubuntu Server, Windows Server 2025 (Active Directory DC), Windows 10/11, macOS, TryHackMe, Hack The Box, PortSwigger
+### 🛡️ 1. [Enterprise AI SOC Assistant & Hybrid Security Lab (`soc-n8n-lab`)](https://github.com/B2Kmonster/soc-n8n-lab-)
+- **Architecture**: Multi-node enterprise security lab featuring Wazuh SIEM/XDR, n8n Automation Engine, Windows Server 2025 Active Directory Domain Controller, Kali Linux, and Docker microservices.
+- **AI Alert Triage**: Built automated AI SOC Analyst using Python webhooks, n8n, and LLM APIs to ingest Wazuh alerts, query AbuseIPDB/VirusTotal threat intel, map findings to MITRE ATT&CK, & dispatch enriched alerts to Slack/Discord.
+- **Active Defense**: Configured automated Wazuh Active Response scripts to instantly block malicious IPs & terminate unauthorized processes.
+
+### 🦆 2. [DuckyBuilder — AI-Powered HID Payload Generator (`DRduckyai`)](https://github.com/B2Kmonster/DRduckyai)
+- **Platform Development**: Full-stack security platform (Flask, SQLite, Gemini 2.0 Flash) for rapid generation of DuckyScript 3.0 automation payloads targeting Hak5 USB Rubber Ducky, Flipper Zero BadUSB, & Bash Bunny.
+- **LLM Guardrail Research**: Evaluated 50+ prompt injection & guardrail test cases to analyze LLM code generation reliability under adversarial prompts. RAG pipeline integration reduced payload design time by ~40%.
+
+### 🔬 3. [WarePy — LLM Security & Prompt Injection Research Framework (`warepy`)](https://github.com/B2Kmonster/warepy)
+- **AI Prompt Injection Research**: Specialized security research framework evaluating AI prompt injection techniques (100+ controlled adversarial experiments).
+- **Stealth & Evasion Modules**: Built Windows post-exploitation research framework (2,000+ line orchestrator + 10 modules) testing PoC scripts for **UAC Bypass** (T1548.002), **AMSI Bypass** (T1562.001), **ETW Patching** (T1562.006), Process Injection (T1055), and Defender Tampering.
+
+### 🧩 4. [CCAIAST — AI Security & Malware Triage Platform (`ccaiast`)](https://github.com/B2Kmonster/ccaiast)
+- **Automated Triage**: Designed a 4-module AI-assisted framework for malware sample analysis, automated static & behavioral IOC extraction, exploit research, & automated incident response generation (reduced manual triage by ~50%).
+
+### ⚡ 5. [ESP32 Embedded Security Research Implant (`esp32_lab_implant`)](https://github.com/B2Kmonster/esp32_lab_implant)
+- **Hardware Security**: Engineered custom ESP32 hardware implants for wireless security testing and HID hardware automation labs.
 
 ---
 
-### 🚀 Featured Security Projects
+## 📜 CERTIFICATIONS & CREDENTIALS
 
-- 🛡️ **`soc-n8n-lab`**: Multi-node Enterprise Security Lab (Wazuh SIEM/XDR, n8n Automation Engine, Windows AD DC, Kali, Docker) with automated AI Alert Triage & Active Defense.
-- 🦆 **`DRduckyai` (DuckyBuilder)**: AI-Powered HID Payload Generator platform using Flask, SQLite, and Gemini for Hak5 USB Rubber Ducky, Flipper Zero BadUSB, & Bash Bunny.
-- 🔬 **`warepy` (WarePy)**: Specialized LLM Security Research & Prompt Injection Framework with 100+ controlled adversarial experiments + Windows post-exploitation modules (UAC/AMSI Bypass, ETW Patching).
-- 🧩 **`ccaiast` (CCAIAST)**: 4-module AI-assisted framework for malware analysis, automated IOC extraction, exploit research, & incident response triage.
-- ⚡ **`esp32_lab_implant`**: Custom ESP32 hardware implants for wireless security testing & HID automation labs.
-
----
-
-### 📜 Certifications
 - 🛡️ **Certified Ethical Hacker (CEH)** — EC-Council
 - ⚔️ **Certified Penetration Testing Professional (CPENT)** *(In Progress)*
 - 🔍 **SOC Level 1 Analyst** *(In Progress)*
 - 🦠 **Malware Analysis Certification**
-- 🌐 **Cisco Network Security & Introduction to Cybersecurity**
+- 🌐 **Cisco Introduction to Cybersecurity & Cisco Network Security**
 
 ---
 
 <div align="center">
+  <br/>
+  <sub><b>DEFCON STATUS: DEFCON 1 // SURRENDER NOTHING</b></sub><br/>
   <sub>Built with ❤️ by <b>Bhuvan Kumar H M</b> (<a href="https://github.com/B2Kmonster">@B2Kmonster</a>)</sub>
 </div>
