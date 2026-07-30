@@ -1,208 +1,233 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 430" width="1180" height="430">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 450" width="1180" height="450">
   <defs>
-    <!-- Master Light Background -->
-    <linearGradient id="bg-light" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="50%" stop-color="#F8FAFC"/>
-      <stop offset="100%" stop-color="#F1F5F9"/>
+    <!-- Black + Green + Red Master Background -->
+    <linearGradient id="bg-matrix-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020403"/>
+      <stop offset="50%" stop-color="#0A0F0D"/>
+      <stop offset="100%" stop-color="#050203"/>
     </linearGradient>
 
-    <!-- Glowing Accent Gradient -->
-    <linearGradient id="accent-light" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1D4ED8"/>
-      <stop offset="50%" stop-color="#0284C7"/>
-      <stop offset="100%" stop-color="#059669"/>
+    <!-- Green to Red Accent Gradient -->
+    <linearGradient id="accent-green-red-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FF66">
+        <animate attributeName="stop-color" values="#00FF66; #FF0055; #00FF66" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#22C55E">
+        <animate attributeName="stop-color" values="#22C55E; #EF4444; #22C55E" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FF0055">
+        <animate attributeName="stop-color" values="#FF0055; #00FF66; #FF0055" dur="6s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
 
-    <!-- Border Gradient -->
-    <linearGradient id="border-light" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2563EB"/>
-      <stop offset="50%" stop-color="#CBD5E1"/>
-      <stop offset="100%" stop-color="#059669"/>
+    <!-- Border Shimmer (Green & Red) -->
+    <linearGradient id="border-matrix-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0, 255, 102, 0.7)"/>
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.1)"/>
+      <stop offset="100%" stop-color="rgba(255, 0, 85, 0.7)"/>
     </linearGradient>
+
+    <!-- Neon Glow Filters -->
+    <filter id="glow-green-filter-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00FF66" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="glow-red-filter-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FF0055" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="card-shadow-light" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
 
     <!-- Radial Background Glows -->
-    <radialGradient id="glow-blue-light" cx="15%" cy="20%" r="60%">
-      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    <radialGradient id="glow-green-blob-light" cx="15%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00FF66" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="glow-cyan-light" cx="85%" cy="80%" r="60%">
-      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+    <radialGradient id="glow-red-blob-light" cx="85%" cy="75%" r="55%">
+      <stop offset="0%" stop-color="#FF0055" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF0055" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Soft Drop Shadow -->
-    <filter id="shadow-light" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.08"/>
-    </filter>
   </defs>
 
   <style>
-    .mono { font-family: 'Fira Code', Consolas, Monaco, 'Courier New', monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .mono { font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-    @keyframes pulseGlow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1.0; } }
-    @keyframes scanline { 0% { transform: translateY(0px); } 100% { transform: translateY(430px); } }
+    @keyframes laserSweep { 0% { transform: translateY(0px); } 100% { transform: translateY(450px); } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1.0; } }
+    @keyframes hudRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    .cursor-blink { animation: blink 0.9s infinite; }
-    .bg-pulse { animation: pulseGlow 5s ease-in-out infinite; }
-    .scan-beam { animation: scanline 7s linear infinite; }
+    .cursor-blink { animation: blink 0.8s infinite; }
+    .laser-beam { animation: laserSweep 5s linear infinite; }
+    .bg-pulse { animation: pulseGlow 4s ease-in-out infinite; }
+    .hud-ring { transform-origin: 170px 180px; animation: hudRotate 15s linear infinite; }
   </style>
 
-  <!-- Outer Card Container -->
-  <rect x="0" y="0" width="1180" height="430" rx="16" fill="url(#bg-light)" stroke="url(#border-light)" stroke-width="1.5" filter="url(#shadow-light)"/>
+  <!-- Outer Canvas Container -->
+  <rect x="0" y="0" width="1180" height="450" rx="16" fill="url(#bg-matrix-light)" stroke="url(#border-matrix-light)" stroke-width="1.5" filter="url(#card-shadow-light)"/>
 
-  <!-- Background Glow Blobs -->
+  <!-- Background Pulsing Radial Glows -->
   <g class="bg-pulse">
-    <circle cx="180" cy="120" r="260" fill="url(#glow-blue-light)"/>
-    <circle cx="1000" cy="320" r="280" fill="url(#glow-cyan-light)"/>
+    <circle cx="180" cy="120" r="280" fill="url(#glow-green-blob-light)"/>
+    <circle cx="1000" cy="330" r="300" fill="url(#glow-red-blob-light)"/>
   </g>
 
-  <!-- Subtle Dot Grid Background -->
-  <g fill="rgba(15, 23, 42, 0.04)">
+  <!-- Matrix Digital Grid Pattern -->
+  <g fill="rgba(0, 255, 102, 0.08)">
     <circle cx="100" cy="60" r="1.5"/><circle cx="200" cy="60" r="1.5"/><circle cx="300" cy="60" r="1.5"/><circle cx="400" cy="60" r="1.5"/><circle cx="500" cy="60" r="1.5"/><circle cx="600" cy="60" r="1.5"/><circle cx="700" cy="60" r="1.5"/><circle cx="800" cy="60" r="1.5"/><circle cx="900" cy="60" r="1.5"/><circle cx="1000" cy="60" r="1.5"/><circle cx="1100" cy="60" r="1.5"/>
     <circle cx="100" cy="160" r="1.5"/><circle cx="200" cy="160" r="1.5"/><circle cx="300" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="500" cy="160" r="1.5"/><circle cx="600" cy="160" r="1.5"/><circle cx="700" cy="160" r="1.5"/><circle cx="800" cy="160" r="1.5"/><circle cx="900" cy="160" r="1.5"/><circle cx="1000" cy="160" r="1.5"/><circle cx="1100" cy="160" r="1.5"/>
     <circle cx="100" cy="260" r="1.5"/><circle cx="200" cy="260" r="1.5"/><circle cx="300" cy="260" r="1.5"/><circle cx="400" cy="260" r="1.5"/><circle cx="500" cy="260" r="1.5"/><circle cx="600" cy="260" r="1.5"/><circle cx="700" cy="260" r="1.5"/><circle cx="800" cy="260" r="1.5"/><circle cx="900" cy="260" r="1.5"/><circle cx="1000" cy="260" r="1.5"/><circle cx="1100" cy="260" r="1.5"/>
     <circle cx="100" cy="360" r="1.5"/><circle cx="200" cy="360" r="1.5"/><circle cx="300" cy="360" r="1.5"/><circle cx="400" cy="360" r="1.5"/><circle cx="500" cy="360" r="1.5"/><circle cx="600" cy="360" r="1.5"/><circle cx="700" cy="360" r="1.5"/><circle cx="800" cy="360" r="1.5"/><circle cx="900" cy="360" r="1.5"/><circle cx="1000" cy="360" r="1.5"/><circle cx="1100" cy="360" r="1.5"/>
   </g>
+  <g fill="rgba(255, 0, 85, 0.08)">
+    <circle cx="150" cy="110" r="1.5"/><circle cx="250" cy="110" r="1.5"/><circle cx="350" cy="110" r="1.5"/><circle cx="450" cy="110" r="1.5"/><circle cx="550" cy="110" r="1.5"/><circle cx="650" cy="110" r="1.5"/><circle cx="750" cy="110" r="1.5"/><circle cx="850" cy="110" r="1.5"/><circle cx="950" cy="110" r="1.5"/><circle cx="1050" cy="110" r="1.5"/>
+    <circle cx="150" cy="210" r="1.5"/><circle cx="250" cy="210" r="1.5"/><circle cx="350" cy="210" r="1.5"/><circle cx="450" cy="210" r="1.5"/><circle cx="550" cy="210" r="1.5"/><circle cx="650" cy="210" r="1.5"/><circle cx="750" cy="210" r="1.5"/><circle cx="850" cy="210" r="1.5"/><circle cx="950" cy="210" r="1.5"/><circle cx="1050" cy="210" r="1.5"/>
+  </g>
 
-  <!-- Scanline Beam -->
-  <rect x="0" y="0" width="1180" height="4" fill="rgba(37, 99, 235, 0.1)" class="scan-beam"/>
+  <!-- Green Laser Scanning Line -->
+  <rect x="0" y="0" width="1180" height="4" fill="rgba(0, 255, 102, 0.3)" class="laser-beam" filter="url(#glow-green-filter-light)"/>
 
   <!-- ======================================================== -->
-  <!-- LEFT HUD PANEL: CYBER SECURITY EMBLEM                   -->
+  <!-- LEFT PANEL: MATRIX CYBER HUD SKULL (~30%)               -->
   <!-- ======================================================== -->
   <g transform="translate(24, 24)">
-    <rect x="0" y="0" width="340" height="382" rx="12" fill="#FFFFFF" fill-opacity="0.95" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="0" y="0" width="340" height="402" rx="12" fill="#060A08" fill-opacity="0.9" stroke="rgba(0, 255, 102, 0.3)" stroke-width="1.2"/>
     
-    <!-- Panel Header -->
-    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 328 0 C 334.63 0 340 5.37 340 12 L 340 38 L 0 38 Z" fill="#F1F5F9"/>
-    <circle cx="18" cy="19" r="5" fill="#FF5F56"/>
+    <!-- Window Header -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 328 0 C 334.63 0 340 5.37 340 12 L 340 38 L 0 38 Z" fill="#0D1410"/>
+    <circle cx="18" cy="19" r="5" fill="#FF0055"/>
     <circle cx="34" cy="19" r="5" fill="#FFBD2E"/>
-    <circle cx="50" cy="19" r="5" fill="#27C93F"/>
-    <text x="170" y="23" text-anchor="middle" fill="#334155" class="mono" font-size="11" font-weight="700">b2kmonster@cyber:~</text>
-    <line x1="0" y1="38" x2="340" y2="38" stroke="#E2E8F0"/>
+    <circle cx="56" cy="19" r="5" fill="#00FF66"/>
+    <text x="170" y="23" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">b2kmonster@matrix:~</text>
+    <line x1="0" y1="38" x2="340" y2="38" stroke="rgba(0, 255, 102, 0.2)"/>
 
-    <!-- Central Cyber Emblem Graphic (Pixel-Perfect Vector Shield HUD) -->
-    <g transform="translate(170, 170)">
-      <!-- Outer Rotating Rings -->
-      <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(37, 99, 235, 0.2)" stroke-width="1.5" stroke-dasharray="8 6"/>
-      <circle cx="0" cy="0" r="70" fill="none" stroke="rgba(2, 132, 199, 0.3)" stroke-width="2"/>
-      <circle cx="0" cy="0" r="55" fill="none" stroke="rgba(5, 150, 105, 0.4)" stroke-width="1" stroke-dasharray="12 4"/>
+    <!-- Central Cyber Emblem: Animated Vector Cyber Skull & HUD -->
+    <g transform="translate(170, 180)">
+      <!-- Animated Rotating HUD Ring -->
+      <circle cx="0" cy="0" r="85" fill="none" stroke="#00FF66" stroke-width="1.5" stroke-dasharray="10 8" class="hud-ring"/>
+      <circle cx="0" cy="0" r="70" fill="none" stroke="#FF0055" stroke-width="1.5" stroke-dasharray="6 6"/>
 
-      <!-- Vector Shield Icon -->
-      <path d="M 0 -38 L 30 -22 L 30 10 C 30 30 0 45 0 45 C 0 45 -30 30 -30 10 L -30 -22 Z" fill="none" stroke="url(#accent-light)" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M 0 -26 L 20 -14 L 20 8 C 20 22 0 32 0 32 C 0 32 -20 22 -20 8 L -20 -14 Z" fill="rgba(37, 99, 235, 0.08)" stroke="#0284C7" stroke-width="1.5"/>
+      <!-- Glowing Matrix Target Crosshairs -->
+      <line x1="-95" y1="0" x2="-65" y2="0" stroke="#00FF66" stroke-width="2"/>
+      <line x1="65" y1="0" x2="95" y2="0" stroke="#00FF66" stroke-width="2"/>
+      <line x1="0" y1="-95" x2="0" y2="-65" stroke="#00FF66" stroke-width="2"/>
+      <line x1="0" y1="65" x2="0" y2="95" stroke="#00FF66" stroke-width="2"/>
 
-      <!-- Lock Keyhole Motif inside Shield -->
-      <circle cx="0" cy="-3" r="6" fill="#059669"/>
-      <polygon points="-4, -1 4, -1 6, 14 -6, 14" fill="#059669"/>
+      <!-- Vector Cyber Hacker Emblem -->
+      <!-- Visor Outer -->
+      <polygon points="-35,-25 35,-25 45,-5 25,25 -25,25 -45,-5" fill="none" stroke="#00FF66" stroke-width="2.5" filter="url(#glow-green-filter-light)"/>
+      <!-- Glowing Red Eyes Visor -->
+      <polygon points="-28,-15 28,-15 35,-2 20,12 -20,12 -35,-2" fill="#FF0055" fill-opacity="0.8" stroke="#FF0055" stroke-width="1.5" filter="url(#glow-red-filter-light)"/>
+      <!-- Cyber Teeth Grid -->
+      <path d="M -15 25 L -15 38 M -5 25 L -5 38 M 5 25 L 5 38 M 15 25 L 15 38" stroke="#00FF66" stroke-width="2"/>
     </g>
 
-    <!-- Status Output at Bottom -->
-    <g transform="translate(20, 310)" class="mono" font-size="11">
-      <text x="0" y="0" fill="#475569" font-weight="600">STATUS : <tspan fill="#059669" font-weight="800">● ONLINE</tspan></text>
-      <text x="0" y="20" fill="#475569" font-weight="600">TARGET : <tspan fill="#0284C7" font-weight="800">AI SOC &amp; PENTEST LAB</tspan></text>
-      <text x="0" y="40" fill="#1D4ED8" font-weight="800">&gt;_ ./init_profile.sh<tspan fill="#0284C7" class="cursor-blink"> █</tspan></text>
+    <!-- Status Block -->
+    <g transform="translate(20, 325)" class="mono" font-size="11">
+      <text x="0" y="0" fill="#94A3B8">SYSTEM : <tspan fill="#00FF66" font-weight="700" filter="url(#glow-green-filter-light)">● ONLINE [MATRIX]</tspan></text>
+      <text x="0" y="20" fill="#94A3B8">RED TEAM: <tspan fill="#FF0055" font-weight="700" filter="url(#glow-red-filter-light)">EXPLOIT OPS ACTIVE</tspan></text>
+      <text x="0" y="40" fill="#00FF66" font-weight="700">&gt;_ ./pwn_the_box.sh<tspan fill="#FF0055" class="cursor-blink"> █</tspan></text>
     </g>
   </g>
 
   <!-- ======================================================== -->
-  <!-- RIGHT PANEL: DEVELOPER PROFILE DETAILS                   -->
+  <!-- RIGHT PANEL: DEVELOPER PROFILE & RED TEAM DETAILS (~70%)  -->
   <!-- ======================================================== -->
   <g transform="translate(388, 24)">
-    <rect x="0" y="0" width="768" height="382" rx="12" fill="#FFFFFF" fill-opacity="0.95" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="0" y="0" width="768" height="402" rx="12" fill="#090D0A" fill-opacity="0.9" stroke="rgba(0, 255, 102, 0.3)" stroke-width="1.2"/>
     
-    <!-- Panel Header Bar -->
-    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 756 0 C 762.63 0 768 5.37 768 12 L 768 38 L 0 38 Z" fill="#F1F5F9"/>
-    <circle cx="18" cy="19" r="5" fill="#FF5F56"/>
+    <!-- Window Header -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 756 0 C 762.63 0 768 5.37 768 12 L 768 38 L 0 38 Z" fill="#0D1410"/>
+    <circle cx="18" cy="19" r="5" fill="#FF0055"/>
     <circle cx="34" cy="19" r="5" fill="#FFBD2E"/>
-    <circle cx="50" cy="19" r="5" fill="#27C93F"/>
-    <text x="384" y="23" text-anchor="middle" fill="#334155" class="mono" font-size="11" font-weight="700">~/bhuvan-kumar-hm/profile.sh</text>
-    <line x1="0" y1="38" x2="768" y2="38" stroke="#E2E8F0"/>
+    <circle cx="56" cy="19" r="5" fill="#00FF66"/>
+    <text x="384" y="23" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">~/bhuvan-kumar-hm/profile.sh</text>
+    <line x1="0" y1="38" x2="768" y2="38" stroke="rgba(0, 255, 102, 0.2)"/>
 
-    <!-- Developer Bio & Info -->
+    <!-- Content Area -->
     <g transform="translate(28, 55)">
       
-      <!-- Name Header -->
-      <text x="0" y="22" fill="#475569" class="sans" font-size="15" font-weight="600">Hi 👋, I'm</text>
-      <text x="86" y="24" fill="url(#accent-light)" class="sans" font-size="24" font-weight="800" letter-spacing="0.5">BHUVAN KUMAR H M</text>
+      <!-- Greeting Header -->
+      <text x="0" y="22" fill="#94A3B8" class="sans" font-size="15" font-weight="600">Hi 👋, I'm</text>
+      <text x="86" y="24" fill="url(#accent-green-red-light)" class="sans" font-size="25" font-weight="900" letter-spacing="0.8">BHUVAN KUMAR H M</text>
       
-      <!-- Primary Role Tagline -->
-      <text x="0" y="55" fill="#1D4ED8" class="mono" font-size="14.5" font-weight="700">&gt; Cybersecurity Engineer <tspan fill="#475569">|</tspan> Penetration Tester <tspan fill="#475569">|</tspan> <tspan fill="#059669">CEH</tspan></text>
+      <!-- Tagline -->
+      <text x="0" y="55" fill="#00FF66" class="mono" font-size="14.5" font-weight="700">&gt; Cybersecurity Engineer <tspan fill="#FF0055">|</tspan> Penetration Tester <tspan fill="#FF0055">|</tspan> <tspan fill="#FF0055" font-weight="800">CEH</tspan></text>
 
-      <line x1="0" y1="72" x2="712" y2="72" stroke="#E2E8F0"/>
+      <line x1="0" y1="72" x2="712" y2="72" stroke="rgba(0, 255, 102, 0.2)"/>
 
-      <!-- Clean Metadata Details List -->
+      <!-- Clean Metadata List -->
       <g transform="translate(0, 98)" class="mono" font-size="13">
         <!-- Row 1: Location -->
         <g transform="translate(0, 0)">
-          <text x="0" y="0" fill="#0284C7" font-weight="700">📍  Location    :</text>
-          <text x="145" y="0" fill="#0F172A" font-weight="600">Karnataka, India</text>
+          <text x="0" y="0" fill="#00FF66" font-weight="700">📍  Location    :</text>
+          <text x="145" y="0" fill="#F8FAFC" font-weight="600">Karnataka, India</text>
         </g>
         <!-- Row 2: Education -->
-        <g transform="translate(0, 26)">
-          <text x="0" y="0" fill="#7C3AED" font-weight="700">🎓  Education   :</text>
-          <text x="145" y="0" fill="#0F172A" font-weight="600">B.E. Computer Science Engineering (Grad 2027)</text>
+        <g transform="translate(0, 28)">
+          <text x="0" y="0" fill="#00FF66" font-weight="700">🎓  Education   :</text>
+          <text x="145" y="0" fill="#F8FAFC" font-weight="600">B.E. Computer Science Engineering (Grad 2027)</text>
         </g>
         <!-- Row 3: Credentials -->
-        <g transform="translate(0, 52)">
-          <text x="0" y="0" fill="#059669" font-weight="700">🎯  Credentials :</text>
-          <text x="145" y="0" fill="#0F172A" font-weight="600">CEH Certified • Pentesting • Reverse Engineering</text>
+        <g transform="translate(0, 56)">
+          <text x="0" y="0" fill="#FF0055" font-weight="700">🎯  Credentials :</text>
+          <text x="145" y="0" fill="#F8FAFC" font-weight="600">Certified Ethical Hacker (CEH) • Pentesting • Reverse Eng</text>
         </g>
         <!-- Row 4: Focus -->
-        <g transform="translate(0, 78)">
-          <text x="0" y="0" fill="#B45309" font-weight="700">⚡  Current Focus:</text>
-          <text x="145" y="0" fill="#0F172A" font-weight="600">AI Security Research, DuckyBuilder &amp; SOC Automation</text>
+        <g transform="translate(0, 84)">
+          <text x="0" y="0" fill="#FF0055" font-weight="700">⚡  Current Focus:</text>
+          <text x="145" y="0" fill="#F8FAFC" font-weight="600">AI Security Research, DuckyBuilder &amp; SOC Automation</text>
         </g>
       </g>
 
-      <line x1="0" y1="202" x2="712" y2="202" stroke="#E2E8F0"/>
+      <line x1="0" y1="212" x2="712" y2="212" stroke="rgba(0, 255, 102, 0.2)"/>
 
-      <!-- Tech Skills Grid -->
-      <g transform="translate(0, 220)">
-        <text x="0" y="0" fill="#475569" class="mono" font-size="11" font-weight="700" letter-spacing="1.5">// TECH &amp; SECURITY STACK</text>
+      <!-- Glowing Skill Pills Section -->
+      <g transform="translate(0, 232)">
+        <text x="0" y="0" fill="#00FF66" class="mono" font-size="11" font-weight="700" letter-spacing="1.5">// CORE TECH &amp; RED TEAM STACK</text>
         
         <g transform="translate(0, 14)">
           <!-- Python -->
-          <rect x="0" y="0" width="76" height="26" rx="6" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.2"/>
-          <text x="38" y="17" text-anchor="middle" fill="#0369A1" class="mono" font-size="11" font-weight="700">Python</text>
+          <rect x="0" y="0" width="76" height="26" rx="6" fill="#05140A" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="38" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">Python</text>
 
           <!-- Pentesting -->
-          <rect x="84" y="0" width="94" height="26" rx="6" fill="#FAF5FF" stroke="#7C3AED" stroke-width="1.2"/>
-          <text x="131" y="17" text-anchor="middle" fill="#6B21A8" class="mono" font-size="11" font-weight="700">Pentesting</text>
+          <rect x="84" y="0" width="94" height="26" rx="6" fill="#140509" stroke="#FF0055" stroke-width="1.2"/>
+          <text x="131" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="11" font-weight="700">Pentesting</text>
 
           <!-- Burp Suite -->
-          <rect x="186" y="0" width="94" height="26" rx="6" fill="#FFF7ED" stroke="#EA580C" stroke-width="1.2"/>
-          <text x="233" y="17" text-anchor="middle" fill="#C2410C" class="mono" font-size="11" font-weight="700">Burp Suite</text>
+          <rect x="186" y="0" width="94" height="26" rx="6" fill="#140509" stroke="#FF0055" stroke-width="1.2"/>
+          <text x="233" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="11" font-weight="700">Burp Suite</text>
 
           <!-- AI Security -->
-          <rect x="288" y="0" width="96" height="26" rx="6" fill="#ECFEFF" stroke="#0891B2" stroke-width="1.2"/>
-          <text x="336" y="17" text-anchor="middle" fill="#0E7490" class="mono" font-size="11" font-weight="700">AI Security</text>
+          <rect x="288" y="0" width="96" height="26" rx="6" fill="#05140A" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="336" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">AI Security</text>
 
           <!-- Wazuh SIEM -->
-          <rect x="392" y="0" width="102" height="26" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="1.2"/>
-          <text x="443" y="17" text-anchor="middle" fill="#047857" class="mono" font-size="11" font-weight="700">Wazuh SIEM</text>
+          <rect x="392" y="0" width="102" height="26" rx="6" fill="#05140A" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="443" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">Wazuh SIEM</text>
 
           <!-- Docker -->
-          <rect x="502" y="0" width="72" height="26" rx="6" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.2"/>
-          <text x="538" y="17" text-anchor="middle" fill="#0369A1" class="mono" font-size="11" font-weight="700">Docker</text>
+          <rect x="502" y="0" width="72" height="26" rx="6" fill="#05140A" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="538" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700">Docker</text>
 
-          <!-- Linux -->
-          <rect x="582" y="0" width="62" height="26" rx="6" fill="#FEFCE8" stroke="#CA8A04" stroke-width="1.2"/>
-          <text x="613" y="17" text-anchor="middle" fill="#854D0E" class="mono" font-size="11" font-weight="700">Linux</text>
+          <!-- Kali Linux -->
+          <rect x="582" y="0" width="88" height="26" rx="6" fill="#140509" stroke="#FF0055" stroke-width="1.2"/>
+          <text x="626" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="11" font-weight="700">Kali Linux</text>
         </g>
       </g>
 
       <!-- Footer Badges -->
-      <g transform="translate(0, 282)">
-        <line x1="0" y1="0" x2="712" y2="0" stroke="#E2E8F0"/>
-        <g transform="translate(0, 12)" class="sans" font-size="12" font-weight="600">
-          <text x="0" y="14" fill="#475569">GitHub: <tspan fill="#0F172A" font-weight="700">@B2Kmonster</tspan></text>
-          <text x="210" y="14" fill="#475569">LinkedIn: <tspan fill="#0F172A" font-weight="700">bhuvan-kumar-hm</tspan></text>
-          <text x="450" y="14" fill="#475569">Email: <tspan fill="#1D4ED8" font-weight="700">bhuvankumarhm25@gmail.com</tspan></text>
+      <g transform="translate(0, 298)">
+        <line x1="0" y1="0" x2="712" y2="0" stroke="rgba(0, 255, 102, 0.2)"/>
+        <g transform="translate(0, 14)" class="sans" font-size="12" font-weight="600">
+          <text x="0" y="14" fill="#94A3B8">GitHub: <tspan fill="#00FF66" font-weight="700">@B2Kmonster</tspan></text>
+          <text x="210" y="14" fill="#94A3B8">LinkedIn: <tspan fill="#00FF66" font-weight="700">bhuvan-kumar-hm</tspan></text>
+          <text x="450" y="14" fill="#94A3B8">Email: <tspan fill="#FF0055" font-weight="700">bhuvankumarhm25@gmail.com</tspan></text>
         </g>
       </g>
 
