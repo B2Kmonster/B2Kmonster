@@ -1,72 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 470" width="1180" height="470">
   <defs>
-    <!-- Dark Cyberpunk Background Base -->
-    <linearGradient id="cyber-bg-light" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020305"/>
-      <stop offset="50%" stop-color="#080C14"/>
-      <stop offset="100%" stop-color="#030205"/>
+    <!-- Cyberpunk 2077 Master Night City Background -->
+    <linearGradient id="cp-bg-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05050A"/>
+      <stop offset="50%" stop-color="#0D0E18"/>
+      <stop offset="100%" stop-color="#05050A"/>
     </linearGradient>
 
-    <!-- Neon Green & Cyber Red Gradient -->
-    <linearGradient id="cyber-neon-grad-light" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00FF66">
-        <animate attributeName="stop-color" values="#00FF66; #FF0055; #00F0FF; #00FF66" dur="8s" repeatCount="indefinite"/>
+    <!-- Cyberpunk 2077 Signature Color Gradient (Yellow -> Cyan -> Pink) -->
+    <linearGradient id="cp-grad-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCEE09">
+        <animate attributeName="stop-color" values="#FCEE09; #00F0FF; #FF0055; #FCEE09" dur="8s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="50%" stop-color="#FF0055">
-        <animate attributeName="stop-color" values="#FF0055; #00F0FF; #00FF66; #FF0055" dur="8s" repeatCount="indefinite"/>
+      <stop offset="50%" stop-color="#00F0FF">
+        <animate attributeName="stop-color" values="#00F0FF; #FF0055; #FCEE09; #00F0FF" dur="8s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#00F0FF">
-        <animate attributeName="stop-color" values="#00F0FF; #00FF66; #FF0055; #00F0FF" dur="8s" repeatCount="indefinite"/>
+      <stop offset="100%" stop-color="#FF0055">
+        <animate attributeName="stop-color" values="#FF0055; #FCEE09; #00F0FF; #FF0055" dur="8s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
 
-    <!-- Cyberpunk Outer Border Shimmer -->
-    <linearGradient id="cyber-border-light" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00FF66"/>
-      <stop offset="35%" stop-color="#FF0055"/>
-      <stop offset="70%" stop-color="#00F0FF"/>
-      <stop offset="100%" stop-color="#00FF66"/>
+    <!-- Outer Cyberpunk 2077 Yellow & Cyan Border -->
+    <linearGradient id="cp-border-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEE09"/>
+      <stop offset="50%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#FF0055"/>
     </linearGradient>
 
-    <!-- Hexagonal Background Grid Pattern -->
-    <pattern id="hex-pattern-light" width="24" height="41.569" patternUnits="userSpaceOnUse">
-      <path d="M 12 0 L 24 6.928 L 24 20.785 L 12 27.713 L 0 20.785 L 0 6.928 Z M 0 41.569 L 12 34.641 L 24 41.569" fill="none" stroke="rgba(0, 255, 102, 0.04)" stroke-width="1"/>
+    <!-- Hex Mesh Pattern -->
+    <pattern id="cp-hex-light" width="24" height="41.569" patternUnits="userSpaceOnUse">
+      <path d="M 12 0 L 24 6.928 L 24 20.785 L 12 27.713 L 0 20.785 L 0 6.928 Z M 0 41.569 L 12 34.641 L 24 41.569" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
     </pattern>
 
     <!-- Neon Glow Filters -->
-    <filter id="glow-green-light" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow-yellow-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FCEE09" flood-opacity="0.7"/>
     </filter>
 
-    <filter id="glow-red-light" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow-cyan-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00F0FF" flood-opacity="0.7"/>
     </filter>
 
-    <filter id="cyber-shadow-light" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.9"/>
+    <filter id="glow-pink-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FF0055" flood-opacity="0.7"/>
     </filter>
 
-    <!-- Background Radial Blobs -->
-    <radialGradient id="blob-green-light" cx="15%" cy="20%" r="60%">
-      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#00FF66" stop-opacity="0"/>
+    <filter id="cp-shadow-light" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000000" flood-opacity="0.95"/>
+    </filter>
+
+    <!-- Radial Background Glows -->
+    <radialGradient id="blob-yellow-light" cx="15%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#FCEE09" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FCEE09" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="blob-red-light" cx="85%" cy="80%" r="60%">
-      <stop offset="0%" stop-color="#FF0055" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#FF0055" stop-opacity="0"/>
+    <radialGradient id="blob-cyan-light" cx="85%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <style>
-    .mono { font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', Consolas, monospace; }
+    .mono { font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -74,123 +69,114 @@
     @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes rotateCounter { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
     @keyframes bgPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1.0; } }
-    @keyframes glitchText { 0%, 100% { transform: translate(0, 0); } 92% { transform: translate(1px, -1px); } 94% { transform: translate(-1px, 1px); } }
 
     .cursor-blink { animation: blink 0.8s infinite; }
     .laser-beam { animation: laserSweep 5s linear infinite; }
     .hud-cw { transform-origin: 175px 190px; animation: rotateClockwise 18s linear infinite; }
     .hud-ccw { transform-origin: 175px 190px; animation: rotateCounter 12s linear infinite; }
     .bg-pulse { animation: bgPulse 5s ease-in-out infinite; }
-    .glitch-effect { animation: glitchText 4s infinite; }
   </style>
 
-  <!-- Outer Cyber Outer Chamfered Container -->
-  <polygon points="0,20 20,0 1160,0 1180,20 1180,450 1160,470 20,470 0,450" fill="url(#cyber-bg-light)" stroke="url(#cyber-border-light)" stroke-width="2" filter="url(#cyber-shadow-light)"/>
+  <!-- Outer Cyberpunk Chamfered Container -->
+  <polygon points="0,20 20,0 1160,0 1180,20 1180,450 1160,470 20,470 0,450" fill="url(#cp-bg-light)" stroke="url(#cp-border-light)" stroke-width="2" filter="url(#cp-shadow-light)"/>
 
   <!-- Hexagonal Grid Overlay -->
-  <rect x="0" y="0" width="1180" height="470" fill="url(#hex-pattern-light)"/>
+  <rect x="0" y="0" width="1180" height="470" fill="url(#cp-hex-light)"/>
 
-  <!-- Background Pulsing Radial Glow Blobs -->
+  <!-- Background Pulsing Radial Glows -->
   <g class="bg-pulse">
-    <circle cx="180" cy="120" r="280" fill="url(#blob-green-light)"/>
-    <circle cx="1000" cy="340" r="300" fill="url(#blob-red-light)"/>
+    <circle cx="180" cy="120" r="280" fill="url(#blob-yellow-light)"/>
+    <circle cx="1000" cy="340" r="300" fill="url(#blob-cyan-light)"/>
   </g>
 
-  <!-- Top Cyber Ticker Line -->
-  <g transform="translate(24, 18)" class="mono" font-size="10" font-weight="700">
-    <text x="0" y="0" fill="#00FF66" letter-spacing="1.5">// CLASSIFIED_SECURITY_NODE // AGENT: B2KMONSTER // OP: RED_TEAM // SYS: KALI_LINUX_PRO</text>
-    <text x="1132" y="0" text-anchor="end" fill="#FF0055" letter-spacing="1">● SEC_LEVEL: MAXIMUM</text>
+  <!-- Top Yellow Cyberpunk 2077 Ticker Banner -->
+  <polygon points="0,0 1180,0 1180,22 0,22" fill="#FCEE09"/>
+  <g transform="translate(24, 15)" class="mono" font-size="10.5" font-weight="900" fill="#000000" letter-spacing="1.2">
+    <text x="0" y="0">// CYBERPUNK 2077 NETRUNNER // AGENT: B2KMONSTER // SYSTEM: KALI_CYBERSEC // NIGHT_CITY_NODE</text>
+    <text x="1132" y="0" text-anchor="end" fill="#000000">● SYSTEM BREACH: ACTIVE</text>
   </g>
 
-  <!-- Dual Laser Sweep Beams -->
-  <rect x="0" y="0" width="1180" height="3" fill="#00FF66" opacity="0.6" class="laser-beam" filter="url(#glow-green-light)"/>
+  <!-- Cyan Laser Scan Sweep -->
+  <rect x="0" y="22" width="1180" height="3" fill="#00F0FF" opacity="0.8" class="laser-beam" filter="url(#glow-cyan-light)"/>
 
   <!-- ======================================================== -->
-  <!-- LEFT COLUMN: NETRUNNER HUD & CYBER VISOR (~30%)         -->
+  <!-- LEFT COLUMN: CYBERPUNK NETRUNNER HUD (~30%)              -->
   <!-- ======================================================== -->
-  <g transform="translate(24, 34)">
-    <!-- Chamfered Panel Container -->
-    <polygon points="0,12 12,0 338,0 350,12 350,400 338,412 12,412 0,400" fill="#070C0A" fill-opacity="0.92" stroke="rgba(0, 255, 102, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(24, 38)">
+    <polygon points="0,12 12,0 338,0 350,12 350,396 338,408 12,408 0,396" fill="#080A12" fill-opacity="0.94" stroke="#00F0FF" stroke-width="1.5"/>
     
     <!-- Header Bar -->
-    <polygon points="0,12 12,0 338,0 350,12 350,34 0,34" fill="#0E1712"/>
+    <polygon points="0,12 12,0 338,0 350,12 350,34 0,34" fill="#00F0FF"/>
     <circle cx="18" cy="17" r="4.5" fill="#FF0055"/>
-    <circle cx="32" cy="17" r="4.5" fill="#FFB700"/>
-    <circle cx="46" cy="17" r="4.5" fill="#00FF66"/>
-    <text x="175" y="21" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700" letter-spacing="1">[ NETRUNNER_NODE_01 ]</text>
-    <line x1="0" y1="34" x2="350" y2="34" stroke="rgba(0, 255, 102, 0.25)"/>
+    <circle cx="32" cy="17" r="4.5" fill="#FCEE09"/>
+    <circle cx="46" cy="17" r="4.5" fill="#000000"/>
+    <text x="175" y="21" text-anchor="middle" fill="#000000" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ NETRUNNER_HUD_2077 ]</text>
+    <line x1="0" y1="34" x2="350" y2="34" stroke="#00F0FF"/>
 
-    <!-- Central Cyberpunk Emblem Graphic -->
-    <g transform="translate(175, 190)">
-      <!-- Outer Hex Reticle -->
-      <polygon points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45" fill="none" stroke="#00FF66" stroke-width="1" stroke-dasharray="6 6" class="hud-cw"/>
-      <circle cx="0" cy="0" r="76" fill="none" stroke="#FF0055" stroke-width="1.5" stroke-dasharray="14 8" class="hud-ccw"/>
+    <!-- Central Cyberpunk Game Emblem (Rotating Reticle & Skull) -->
+    <g transform="translate(175, 186)">
+      <!-- Outer Rotating Reticles -->
+      <polygon points="0,-88 76,-44 76,44 0,88 -76,44 -76,-44" fill="none" stroke="#FCEE09" stroke-width="1.5" stroke-dasharray="10 6" class="hud-cw" filter="url(#glow-yellow-light)"/>
+      <circle cx="0" cy="0" r="74" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="14 8" class="hud-ccw"/>
 
       <!-- Crosshairs -->
-      <line x1="-100" y1="0" x2="-65" y2="0" stroke="#00FF66" stroke-width="2"/>
-      <line x1="65" y1="0" x2="100" y2="0" stroke="#00FF66" stroke-width="2"/>
-      <line x1="0" y1="-100" x2="0" y2="-65" stroke="#00FF66" stroke-width="2"/>
-      <line x1="0" y1="65" x2="0" y2="100" stroke="#00FF66" stroke-width="2"/>
+      <line x1="-98" y1="0" x2="-62" y2="0" stroke="#00F0FF" stroke-width="2"/>
+      <line x1="62" y1="0" x2="98" y2="0" stroke="#00F0FF" stroke-width="2"/>
+      <line x1="0" y1="-98" x2="0" y2="-62" stroke="#00F0FF" stroke-width="2"/>
+      <line x1="0" y1="62" x2="0" y2="98" stroke="#00F0FF" stroke-width="2"/>
 
-      <!-- Cyber Visor Skull Geometry -->
-      <polygon points="-40,-30 40,-30 50,-5 30,30 -30,30 -50,-5" fill="#050A08" stroke="#00FF66" stroke-width="2.5" filter="url(#glow-green-light)"/>
-      <polygon points="-32,-18 32,-18 40,-2 22,14 -22,14 -40,-2" fill="#FF0055" fill-opacity="0.85" stroke="#FF0055" stroke-width="1.5" filter="url(#glow-red-light)"/>
-      <path d="M -18 30 L -18 44 M -6 30 L -6 44 M 6 30 L 6 44 M 18 30 L 18 44" stroke="#00FF66" stroke-width="2"/>
-
-      <!-- Angular Corner Brackets -->
-      <path d="M -60 -50 L -70 -50 L -70 -40" fill="none" stroke="#00FF66" stroke-width="2"/>
-      <path d="M 60 -50 L 70 -50 L 70 -40" fill="none" stroke="#00FF66" stroke-width="2"/>
-      <path d="M -60 50 L -70 50 L -70 40" fill="none" stroke="#00FF66" stroke-width="2"/>
-      <path d="M 60 50 L 70 50 L 70 40" fill="none" stroke="#00FF66" stroke-width="2"/>
+      <!-- Cyberpunk 2077 Visor Skull -->
+      <polygon points="-40,-30 40,-30 50,-5 30,30 -30,30 -50,-5" fill="#07070F" stroke="#FCEE09" stroke-width="2.5" filter="url(#glow-yellow-light)"/>
+      <polygon points="-32,-18 32,-18 40,-2 22,14 -22,14 -40,-2" fill="#FF0055" fill-opacity="0.9" stroke="#FF0055" stroke-width="1.5" filter="url(#glow-pink-light)"/>
+      <path d="M -18 30 L -18 44 M -6 30 L -6 44 M 6 30 L 6 44 M 18 30 L 18 44" stroke="#00F0FF" stroke-width="2"/>
     </g>
 
-    <!-- Cyber Telemetry Output Block -->
-    <g transform="translate(18, 332)" class="mono" font-size="10.5">
-      <text x="0" y="0" fill="#94A3B8">STATUS  : <tspan fill="#00FF66" font-weight="800" filter="url(#glow-green-light)">● ONLINE [100% OK]</tspan></text>
-      <text x="0" y="18" fill="#94A3B8">LAB_NODES: <tspan fill="#00F0FF" font-weight="700">Wazuh SIEM • n8n • AD DC</tspan></text>
-      <text x="0" y="36" fill="#94A3B8">EXPLOITS: <tspan fill="#FF0055" font-weight="800" filter="url(#glow-red-light)">WarePy • DuckyBuilder</tspan></text>
-      <text x="0" y="56" fill="#00FF66" font-weight="800">&gt;_ root@b2ksec:~# exploit -t AI<tspan fill="#FF0055" class="cursor-blink"> █</tspan></text>
+    <!-- Status Block -->
+    <g transform="translate(18, 328)" class="mono" font-size="10.5">
+      <text x="0" y="0" fill="#94A3B8">NIGHT_CITY: <tspan fill="#FCEE09" font-weight="800" filter="url(#glow-yellow-light)">● ONLINE [2077]</tspan></text>
+      <text x="0" y="18" fill="#94A3B8">LAB_NODES : <tspan fill="#00F0FF" font-weight="800">Wazuh SIEM • n8n • AD DC</tspan></text>
+      <text x="0" y="36" fill="#94A3B8">EXPLOITS  : <tspan fill="#FF0055" font-weight="800" filter="url(#glow-pink-light)">WarePy • DuckyBuilder</tspan></text>
+      <text x="0" y="56" fill="#FCEE09" font-weight="800">&gt;_ root@b2ksec:~# exploit -t AI<tspan fill="#00F0FF" class="cursor-blink"> █</tspan></text>
     </g>
   </g>
 
   <!-- ======================================================== -->
   <!-- RIGHT COLUMN: DEVELOPER PROFILE & RED TEAM DATA (~70%)    -->
   <!-- ======================================================== -->
-  <g transform="translate(394, 34)">
-    <!-- Chamfered Panel Container -->
-    <polygon points="0,12 12,0 750,0 762,12 762,400 750,412 12,412 0,400" fill="#070A0E" fill-opacity="0.92" stroke="rgba(0, 255, 102, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(388, 38)">
+    <polygon points="0,12 12,0 750,0 762,12 762,396 750,408 12,408 0,396" fill="#080A12" fill-opacity="0.94" stroke="#FCEE09" stroke-width="1.5"/>
     
     <!-- Header Bar -->
-    <polygon points="0,12 12,0 750,0 762,12 762,34 0,34" fill="#0E1712"/>
+    <polygon points="0,12 12,0 750,0 762,12 762,34 0,34" fill="#FCEE09"/>
     <circle cx="18" cy="17" r="4.5" fill="#FF0055"/>
-    <circle cx="32" cy="17" r="4.5" fill="#FFB700"/>
-    <circle cx="46" cy="17" r="4.5" fill="#00FF66"/>
-    <text x="381" y="21" text-anchor="middle" fill="#00FF66" class="mono" font-size="11" font-weight="700" letter-spacing="1">[ DATASTREAM // BHUVAN_KUMAR_HM ]</text>
-    <line x1="0" y1="34" x2="762" y2="34" stroke="rgba(0, 255, 102, 0.25)"/>
+    <circle cx="32" cy="17" r="4.5" fill="#00F0FF"/>
+    <circle cx="46" cy="17" r="4.5" fill="#000000"/>
+    <text x="381" y="21" text-anchor="middle" fill="#000000" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ CYBERPUNK_PROFILE // BHUVAN_KUMAR_HM ]</text>
+    <line x1="0" y1="34" x2="762" y2="34" stroke="#FCEE09"/>
 
     <!-- Content Area -->
     <g transform="translate(28, 52)">
       
-      <!-- Name Header with Cyber Glow -->
+      <!-- Name Header in Iconic Cyberpunk Yellow & Pink -->
       <text x="0" y="22" fill="#94A3B8" class="sans" font-size="15" font-weight="600">Hi 👋, I'm</text>
-      <text x="86" y="24" fill="url(#cyber-neon-grad-light)" class="sans glitch-effect" font-size="26" font-weight="900" letter-spacing="1">BHUVAN KUMAR H M</text>
+      <text x="86" y="24" fill="url(#cp-grad-light)" class="sans" font-size="26" font-weight="900" letter-spacing="1">BHUVAN KUMAR H M</text>
       
-      <!-- Role Tagline -->
-      <text x="0" y="55" fill="#00FF66" class="mono" font-size="14" font-weight="700">&gt; CYBERSECURITY ENG <tspan fill="#FF0055">|</tspan> PENETRATION TESTER <tspan fill="#FF0055">|</tspan> <tspan fill="#FF0055" font-weight="900">CEH</tspan> <tspan fill="#FF0055">|</tspan> <tspan fill="#00F0FF">AI SECURITY</tspan></text>
+      <!-- Tagline -->
+      <text x="0" y="55" fill="#FCEE09" class="mono" font-size="14" font-weight="800">&gt; CYBERSECURITY ENG <tspan fill="#FF0055">|</tspan> PENETRATION TESTER <tspan fill="#FF0055">|</tspan> <tspan fill="#FF0055" font-weight="900">CEH</tspan> <tspan fill="#FF0055">|</tspan> <tspan fill="#00F0FF">AI SECURITY</tspan></text>
 
-      <line x1="0" y1="70" x2="706" y2="70" stroke="rgba(0, 255, 102, 0.25)"/>
+      <line x1="0" y1="70" x2="706" y2="70" stroke="rgba(252, 238, 9, 0.3)"/>
 
-      <!-- Clean Non-Overlapping Metadata List -->
+      <!-- Clean Metadata List -->
       <g transform="translate(0, 96)" class="mono" font-size="13">
         <!-- Row 1: Location -->
         <g transform="translate(0, 0)">
-          <text x="0" y="0" fill="#00FF66" font-weight="800">[LOC]</text>
+          <text x="0" y="0" fill="#FCEE09" font-weight="800">[LOC]</text>
           <text x="52" y="0" fill="#00F0FF" font-weight="700">Location    :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">Karnataka, India</text>
         </g>
         <!-- Row 2: Education -->
         <g transform="translate(0, 28)">
-          <text x="0" y="0" fill="#00FF66" font-weight="800">[EDU]</text>
+          <text x="0" y="0" fill="#FCEE09" font-weight="800">[EDU]</text>
           <text x="52" y="0" fill="#00F0FF" font-weight="700">Education   :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">B.E. Computer Science Engineering (Grad 2027)</text>
         </g>
@@ -208,16 +194,16 @@
         </g>
       </g>
 
-      <line x1="0" y1="210" x2="706" y2="210" stroke="rgba(0, 255, 102, 0.25)"/>
+      <line x1="0" y1="210" x2="706" y2="210" stroke="rgba(252, 238, 9, 0.3)"/>
 
-      <!-- Angular Cyberpunk Tech Badges -->
+      <!-- Tech Stack Badges (Cyberpunk 2077 Yellow & Cyan) -->
       <g transform="translate(0, 230)">
-        <text x="0" y="0" fill="#00FF66" class="mono" font-size="11" font-weight="800" letter-spacing="1.5">// EXPLOIT_STACK &amp; TOOLKIT</text>
+        <text x="0" y="0" fill="#FCEE09" class="mono" font-size="11" font-weight="800" letter-spacing="1.5">// NIGHT_CITY_TOOLKIT &amp; EXPLOITS</text>
         
         <g transform="translate(0, 14)">
           <!-- Python -->
-          <polygon points="0,0 72,0 80,8 80,26 8,26 0,18" fill="#061A0F" stroke="#00FF66" stroke-width="1.2"/>
-          <text x="40" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="10.5" font-weight="800">▶ Python</text>
+          <polygon points="0,0 72,0 80,8 80,26 8,26 0,18" fill="#1C1A04" stroke="#FCEE09" stroke-width="1.2"/>
+          <text x="40" y="17" text-anchor="middle" fill="#FCEE09" class="mono" font-size="10.5" font-weight="800">▶ Python</text>
 
           <!-- Pentesting -->
           <polygon points="88,0 180,0 188,8 188,26 96,26 88,18" fill="#1C060D" stroke="#FF0055" stroke-width="1.2"/>
@@ -228,16 +214,16 @@
           <text x="245" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="10.5" font-weight="800">▶ Burp Suite</text>
 
           <!-- AI Security -->
-          <polygon points="302,0 394,0 402,8 402,26 310,26 302,18" fill="#061A0F" stroke="#00FF66" stroke-width="1.2"/>
-          <text x="352" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="10.5" font-weight="800">▶ AI Security</text>
+          <polygon points="302,0 394,0 402,8 402,26 310,26 302,18" fill="#04181C" stroke="#00F0FF" stroke-width="1.2"/>
+          <text x="352" y="17" text-anchor="middle" fill="#00F0FF" class="mono" font-size="10.5" font-weight="800">▶ AI Security</text>
 
           <!-- Wazuh SIEM -->
-          <polygon points="410,0 508,0 516,8 516,26 418,26 410,18" fill="#061A0F" stroke="#00FF66" stroke-width="1.2"/>
-          <text x="463" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="10.5" font-weight="800">▶ Wazuh SIEM</text>
+          <polygon points="410,0 508,0 516,8 516,26 418,26 410,18" fill="#04181C" stroke="#00F0FF" stroke-width="1.2"/>
+          <text x="463" y="17" text-anchor="middle" fill="#00F0FF" class="mono" font-size="10.5" font-weight="800">▶ Wazuh SIEM</text>
 
           <!-- Docker -->
-          <polygon points="524,0 594,0 602,8 602,26 532,26 524,18" fill="#06181C" stroke="#00F0FF" stroke-width="1.2"/>
-          <text x="563" y="17" text-anchor="middle" fill="#00F0FF" class="mono" font-size="10.5" font-weight="800">▶ Docker</text>
+          <polygon points="524,0 594,0 602,8 602,26 532,26 524,18" fill="#1C1A04" stroke="#FCEE09" stroke-width="1.2"/>
+          <text x="563" y="17" text-anchor="middle" fill="#FCEE09" class="mono" font-size="10.5" font-weight="800">▶ Docker</text>
 
           <!-- Kali Linux -->
           <polygon points="610,0 698,0 706,8 706,26 618,26 610,18" fill="#1C060D" stroke="#FF0055" stroke-width="1.2"/>
@@ -245,14 +231,14 @@
         </g>
       </g>
 
-      <!-- Footer Telemetry & Handles -->
-      <g transform="translate(0, 302)">
-        <line x1="0" y1="0" x2="706" y2="0" stroke="rgba(0, 255, 102, 0.25)"/>
-        <g transform="translate(0, 14)" class="mono" font-size="11" font-weight="700">
-          <text x="0" y="14" fill="#94A3B8">SYS_ID: <tspan fill="#00FF66">157491016</tspan></text>
-          <text x="145" y="14" fill="#94A3B8">GH: <tspan fill="#00FF66">@B2Kmonster</tspan></text>
-          <text x="310" y="14" fill="#94A3B8">IN: <tspan fill="#00FF66">bhuvan-kumar-hm</tspan></text>
-          <text x="500" y="14" fill="#94A3B8">EMAIL: <tspan fill="#FF0055">bhuvankumarhm25@gmail.com</tspan></text>
+      <!-- Footer Handles -->
+      <g transform="translate(0, 298)">
+        <line x1="0" y1="0" x2="706" y2="0" stroke="rgba(252, 238, 9, 0.3)"/>
+        <g transform="translate(0, 14)" class="mono" font-size="11" font-weight="800">
+          <text x="0" y="14" fill="#94A3B8">NETRUNNER_ID: <tspan fill="#FCEE09">157491016</tspan></text>
+          <text x="170" y="14" fill="#94A3B8">GH: <tspan fill="#00F0FF">@B2Kmonster</tspan></text>
+          <text x="330" y="14" fill="#94A3B8">IN: <tspan fill="#00F0FF">bhuvan-kumar-hm</tspan></text>
+          <text x="520" y="14" fill="#94A3B8">EMAIL: <tspan fill="#FF0055">bhuvankumarhm25@gmail.com</tspan></text>
         </g>
       </g>
 
