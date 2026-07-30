@@ -1,5 +1,7 @@
-![Bhuvan's DEFCON Hero Banner](https://raw.githubusercontent.com/B2Kmonster/B2Kmonster/main/dark.svg#gh-dark-mode-only)
-![Bhuvan's DEFCON Hero Banner](https://raw.githubusercontent.com/B2Kmonster/B2Kmonster/main/light.svg#gh-light-mode-only)
+<p align="center">
+  <img src="./dark.svg#gh-dark-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
+  <img src="./light.svg#gh-light-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
+</p>
 
 <br/>
 
