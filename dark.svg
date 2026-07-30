@@ -1,63 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 470" width="1180" height="470">
   <defs>
-    <!-- Cyberpunk 2077 Master Night City Background -->
-    <linearGradient id="cp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05050A"/>
-      <stop offset="50%" stop-color="#0D0E18"/>
-      <stop offset="100%" stop-color="#05050A"/>
+    <!-- Black + Red + Yellow Master Background (NO BLUE) -->
+    <linearGradient id="bg-defcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020102"/>
+      <stop offset="50%" stop-color="#0F0507"/>
+      <stop offset="100%" stop-color="#020102"/>
     </linearGradient>
 
-    <!-- Cyberpunk 2077 Signature Color Gradient (Yellow -> Cyan -> Pink) -->
-    <linearGradient id="cp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FCEE09">
-        <animate attributeName="stop-color" values="#FCEE09; #00F0FF; #FF0055; #FCEE09" dur="8s" repeatCount="indefinite"/>
+    <!-- Red to Yellow Accent Gradient -->
+    <linearGradient id="accent-red-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF003C">
+        <animate attributeName="stop-color" values="#FF003C; #FCEE09; #00FF66; #FF003C" dur="6s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="50%" stop-color="#00F0FF">
-        <animate attributeName="stop-color" values="#00F0FF; #FF0055; #FCEE09; #00F0FF" dur="8s" repeatCount="indefinite"/>
+      <stop offset="50%" stop-color="#FCEE09">
+        <animate attributeName="stop-color" values="#FCEE09; #00FF66; #FF003C; #FCEE09" dur="6s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#FF0055">
-        <animate attributeName="stop-color" values="#FF0055; #FCEE09; #00F0FF; #FF0055" dur="8s" repeatCount="indefinite"/>
+      <stop offset="100%" stop-color="#00FF66">
+        <animate attributeName="stop-color" values="#00FF66; #FF003C; #FCEE09; #00FF66" dur="6s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
 
-    <!-- Outer Cyberpunk 2077 Yellow & Cyan Border -->
-    <linearGradient id="cp-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FCEE09"/>
-      <stop offset="50%" stop-color="#00F0FF"/>
-      <stop offset="100%" stop-color="#FF0055"/>
+    <!-- Border Shimmer Gradient (Red & Yellow) -->
+    <linearGradient id="border-defcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF003C"/>
+      <stop offset="50%" stop-color="#FCEE09"/>
+      <stop offset="100%" stop-color="#FF003C"/>
     </linearGradient>
 
-    <!-- Hex Mesh Pattern -->
-    <pattern id="cp-hex" width="24" height="41.569" patternUnits="userSpaceOnUse">
-      <path d="M 12 0 L 24 6.928 L 24 20.785 L 12 27.713 L 0 20.785 L 0 6.928 Z M 0 41.569 L 12 34.641 L 24 41.569" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
-    </pattern>
-
-    <!-- Neon Glow Filters -->
-    <filter id="glow-yellow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FCEE09" flood-opacity="0.7"/>
+    <!-- High-Intensity Red DEFCON Glow Filter -->
+    <filter id="glow-red-intense" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
 
-    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00F0FF" flood-opacity="0.7"/>
+    <filter id="glow-yellow-intense" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
 
-    <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FF0055" flood-opacity="0.7"/>
-    </filter>
-
-    <filter id="cp-shadow" x="-10%" y="-10%" width="120%" height="120%">
+    <filter id="defcon-shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000000" flood-opacity="0.95"/>
     </filter>
 
     <!-- Radial Background Glows -->
-    <radialGradient id="blob-yellow" cx="15%" cy="20%" r="60%">
+    <radialGradient id="blob-red-defcon" cx="15%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#FF003C" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FF003C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob-yellow-defcon" cx="85%" cy="75%" r="60%">
       <stop offset="0%" stop-color="#FCEE09" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#FCEE09" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="blob-cyan" cx="85%" cy="80%" r="60%">
-      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
-    </radialGradient>
+
+    <!-- Hex Mesh Pattern -->
+    <pattern id="hex-defcon" width="24" height="41.569" patternUnits="userSpaceOnUse">
+      <path d="M 12 0 L 24 6.928 L 24 20.785 L 12 27.713 L 0 20.785 L 0 6.928 Z M 0 41.569 L 12 34.641 L 24 41.569" fill="none" stroke="rgba(255, 0, 60, 0.06)" stroke-width="1"/>
+    </pattern>
   </defs>
 
   <style>
@@ -68,75 +72,138 @@
     @keyframes laserSweep { 0% { transform: translateY(0px); } 100% { transform: translateY(470px); } }
     @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes rotateCounter { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
-    @keyframes bgPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1.0; } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1.0; } }
+    @keyframes skullPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
 
     .cursor-blink { animation: blink 0.8s infinite; }
-    .laser-beam { animation: laserSweep 5s linear infinite; }
-    .hud-cw { transform-origin: 175px 190px; animation: rotateClockwise 18s linear infinite; }
-    .hud-ccw { transform-origin: 175px 190px; animation: rotateCounter 12s linear infinite; }
-    .bg-pulse { animation: bgPulse 5s ease-in-out infinite; }
+    .laser-beam { animation: laserSweep 4.5s linear infinite; }
+    .hud-cw { transform-origin: 175px 175px; animation: rotateClockwise 16s linear infinite; }
+    .hud-ccw { transform-origin: 175px 175px; animation: rotateCounter 10s linear infinite; }
+    .bg-pulse { animation: pulseGlow 4s ease-in-out infinite; }
+    .skull-anim { transform-origin: 175px 175px; animation: skullPulse 3s ease-in-out infinite; }
   </style>
 
-  <!-- Outer Cyberpunk Chamfered Container -->
-  <polygon points="0,20 20,0 1160,0 1180,20 1180,450 1160,470 20,470 0,450" fill="url(#cp-bg)" stroke="url(#cp-border)" stroke-width="2" filter="url(#cp-shadow)"/>
+  <!-- Outer Chamfered Container -->
+  <polygon points="0,20 20,0 1160,0 1180,20 1180,450 1160,470 20,470 0,450" fill="url(#bg-defcon)" stroke="url(#border-defcon)" stroke-width="2" filter="url(#defcon-shadow)"/>
 
   <!-- Hexagonal Grid Overlay -->
-  <rect x="0" y="0" width="1180" height="470" fill="url(#cp-hex)"/>
+  <rect x="0" y="0" width="1180" height="470" fill="url(#hex-defcon)"/>
 
-  <!-- Background Pulsing Radial Glows -->
+  <!-- Pulsing Background Glow Blobs -->
   <g class="bg-pulse">
-    <circle cx="180" cy="120" r="280" fill="url(#blob-yellow)"/>
-    <circle cx="1000" cy="340" r="300" fill="url(#blob-cyan)"/>
+    <circle cx="180" cy="120" r="280" fill="url(#blob-red-defcon)"/>
+    <circle cx="1000" cy="340" r="300" fill="url(#blob-yellow-defcon)"/>
   </g>
 
-  <!-- Top Yellow Cyberpunk 2077 Ticker Banner -->
-  <polygon points="0,0 1180,0 1180,22 0,22" fill="#FCEE09"/>
-  <g transform="translate(24, 15)" class="mono" font-size="10.5" font-weight="900" fill="#000000" letter-spacing="1.2">
-    <text x="0" y="0">// CYBERPUNK 2077 NETRUNNER // AGENT: B2KMONSTER // SYSTEM: KALI_CYBERSEC // NIGHT_CITY_NODE</text>
-    <text x="1132" y="0" text-anchor="end" fill="#000000">● SYSTEM BREACH: ACTIVE</text>
+  <!-- Top Yellow/Red Ticker Banner -->
+  <polygon points="0,0 1180,0 1180,22 0,22" fill="#FF003C"/>
+  <g transform="translate(24, 15)" class="mono" font-size="10.5" font-weight="900" fill="#FFFFFF" letter-spacing="1.2">
+    <text x="0" y="0">// DEFCON RED TEAM OPERATIONAL NODE // AGENT: B2KMONSTER // SURRENDER NOTHING // 0x7F_SEC</text>
+    <text x="1132" y="0" text-anchor="end" fill="#FCEE09">● THREAT LEVEL: DEFCON 1</text>
   </g>
 
-  <!-- Cyan Laser Scan Sweep -->
-  <rect x="0" y="22" width="1180" height="3" fill="#00F0FF" opacity="0.8" class="laser-beam" filter="url(#glow-cyan)"/>
+  <!-- Crimson Laser Scan Sweep -->
+  <rect x="0" y="22" width="1180" height="3" fill="#FF003C" opacity="0.9" class="laser-beam" filter="url(#glow-red-intense)"/>
 
   <!-- ======================================================== -->
-  <!-- LEFT COLUMN: CYBERPUNK NETRUNNER HUD (~30%)              -->
+  <!-- LEFT COLUMN: DEFCON RED SKULL LOGO PANEL (~30%)           -->
   <!-- ======================================================== -->
   <g transform="translate(24, 38)">
-    <polygon points="0,12 12,0 338,0 350,12 350,396 338,408 12,408 0,396" fill="#080A12" fill-opacity="0.94" stroke="#00F0FF" stroke-width="1.5"/>
+    <polygon points="0,12 12,0 338,0 350,12 350,396 338,408 12,408 0,396" fill="#0A0305" fill-opacity="0.95" stroke="#FF003C" stroke-width="1.5"/>
     
-    <!-- Header Bar -->
-    <polygon points="0,12 12,0 338,0 350,12 350,34 0,34" fill="#00F0FF"/>
-    <circle cx="18" cy="17" r="4.5" fill="#FF0055"/>
-    <circle cx="32" cy="17" r="4.5" fill="#FCEE09"/>
+    <!-- Panel Header -->
+    <polygon points="0,12 12,0 338,0 350,12 350,34 0,34" fill="#FF003C"/>
+    <circle cx="18" cy="17" r="4.5" fill="#FCEE09"/>
+    <circle cx="32" cy="17" r="4.5" fill="#00FF66"/>
     <circle cx="46" cy="17" r="4.5" fill="#000000"/>
-    <text x="175" y="21" text-anchor="middle" fill="#000000" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ NETRUNNER_HUD_2077 ]</text>
-    <line x1="0" y1="34" x2="350" y2="34" stroke="#00F0FF"/>
+    <text x="175" y="21" text-anchor="middle" fill="#FFFFFF" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ DEFCON_RED_SKULL ]</text>
+    <line x1="0" y1="34" x2="350" y2="34" stroke="#FF003C"/>
 
-    <!-- Central Cyberpunk Game Emblem (Rotating Reticle & Skull) -->
-    <g transform="translate(175, 186)">
-      <!-- Outer Rotating Reticles -->
-      <polygon points="0,-88 76,-44 76,44 0,88 -76,44 -76,-44" fill="none" stroke="#FCEE09" stroke-width="1.5" stroke-dasharray="10 6" class="hud-cw" filter="url(#glow-yellow)"/>
-      <circle cx="0" cy="0" r="74" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="14 8" class="hud-ccw"/>
+    <!-- ======================================================== -->
+    <!-- DEFCON LOGO GRAPHIC (RED SKULL + CROSSED DAGGER BLADES)  -->
+    <!-- ======================================================== -->
+    <g transform="translate(0, 0)">
+      
+      <!-- Animated Rotating Outer Target Rings (NO BLUE, RED & YELLOW ONLY) -->
+      <g class="hud-cw">
+        <circle cx="175" cy="175" r="82" fill="none" stroke="#FCEE09" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.7"/>
+      </g>
+      <g class="hud-ccw">
+        <circle cx="175" cy="175" r="70" fill="none" stroke="#FF003C" stroke-width="2" stroke-dasharray="18 6" opacity="0.85"/>
+      </g>
 
-      <!-- Crosshairs -->
-      <line x1="-98" y1="0" x2="-62" y2="0" stroke="#00F0FF" stroke-width="2"/>
-      <line x1="62" y1="0" x2="98" y2="0" stroke="#00F0FF" stroke-width="2"/>
-      <line x1="0" y1="-98" x2="0" y2="-62" stroke="#00F0FF" stroke-width="2"/>
-      <line x1="0" y1="62" x2="0" y2="98" stroke="#00F0FF" stroke-width="2"/>
+      <!-- Animated DEFCON Red Skull Container -->
+      <g class="skull-anim" filter="url(#glow-red-intense)">
+        
+        <!-- CROSSED DAGGER BLADES (BEHIND CIRCLE) -->
+        <!-- Left Dagger (Top-Left Blade to Bottom-Right Handle) -->
+        <g transform="translate(175, 175) rotate(-35)">
+          <!-- Blade -->
+          <polygon points="-8,-92 0,-115 8,-92 6,-30 -6,-30" fill="#FF003C"/>
+          <line x1="0" y1="-115" x2="0" y2="-30" stroke="#FCEE09" stroke-width="1.5"/>
+          <!-- Crossguard & Handle -->
+          <rect x="-18" y="-30" width="36" height="6" rx="2" fill="#FF003C"/>
+          <rect x="-5" y="-24" width="10" height="35" rx="2" fill="#FF003C"/>
+          <!-- Pommel -->
+          <circle cx="0" cy="14" r="7" fill="#FCEE09"/>
+        </g>
 
-      <!-- Cyberpunk 2077 Visor Skull -->
-      <polygon points="-40,-30 40,-30 50,-5 30,30 -30,30 -50,-5" fill="#07070F" stroke="#FCEE09" stroke-width="2.5" filter="url(#glow-yellow)"/>
-      <polygon points="-32,-18 32,-18 40,-2 22,14 -22,14 -40,-2" fill="#FF0055" fill-opacity="0.9" stroke="#FF0055" stroke-width="1.5" filter="url(#glow-pink)"/>
-      <path d="M -18 30 L -18 44 M -6 30 L -6 44 M 6 30 L 6 44 M 18 30 L 18 44" stroke="#00F0FF" stroke-width="2"/>
-    </g>
+        <!-- Right Dagger (Top-Right Blade to Bottom-Left Handle) -->
+        <g transform="translate(175, 175) rotate(35)">
+          <!-- Blade -->
+          <polygon points="-8,-92 0,-115 8,-92 6,-30 -6,-30" fill="#FF003C"/>
+          <line x1="0" y1="-115" x2="0" y2="-30" stroke="#FCEE09" stroke-width="1.5"/>
+          <!-- Crossguard & Handle -->
+          <rect x="-18" y="-30" width="36" height="6" rx="2" fill="#FF003C"/>
+          <rect x="-5" y="-24" width="10" height="35" rx="2" fill="#FF003C"/>
+          <!-- Pommel -->
+          <circle cx="0" cy="14" r="7" fill="#FCEE09"/>
+        </g>
 
-    <!-- Status Block -->
-    <g transform="translate(18, 328)" class="mono" font-size="10.5">
-      <text x="0" y="0" fill="#94A3B8">NIGHT_CITY: <tspan fill="#FCEE09" font-weight="800" filter="url(#glow-yellow)">● ONLINE [2077]</tspan></text>
-      <text x="0" y="18" fill="#94A3B8">LAB_NODES : <tspan fill="#00F0FF" font-weight="800">Wazuh SIEM • n8n • AD DC</tspan></text>
-      <text x="0" y="36" fill="#94A3B8">EXPLOITS  : <tspan fill="#FF0055" font-weight="800" filter="url(#glow-pink)">WarePy • DuckyBuilder</tspan></text>
-      <text x="0" y="56" fill="#FCEE09" font-weight="800">&gt;_ root@b2ksec:~# exploit -t AI<tspan fill="#00F0FF" class="cursor-blink"> █</tspan></text>
+        <!-- CIRCULAR BROKEN TARGET RING -->
+        <path d="M 175 110 A 65 65 0 0 1 240 175 A 65 65 0 0 1 175 240 A 65 65 0 0 1 110 175 A 65 65 0 0 1 175 110" fill="none" stroke="#FF003C" stroke-width="6"/>
+
+        <!-- DEFCON AGPRESSIVE RED SKULL VECTOR -->
+        <g transform="translate(175, 170)">
+          <!-- Cranium Outer Shape -->
+          <path d="M -34 -30 C -34 -55 34 -55 34 -30 C 34 -10 26 5 20 20 L 14 38 L -14 38 L -20 20 C -26 5 -34 -10 -34 -30 Z" fill="#FF003C"/>
+          
+          <!-- Skull Cracks & Detailing -->
+          <path d="M 0 -50 L -6 -35 L 2 -25 L -4 -10" fill="none" stroke="#000000" stroke-width="2"/>
+          <path d="M 12 -45 L 8 -32 L 15 -20" fill="none" stroke="#000000" stroke-width="1.5"/>
+
+          <!-- Dark Eye Sockets -->
+          <path d="M -22 -18 C -14 -28 -6 -18 -10 -8 C -16 -4 -24 -8 -22 -18 Z" fill="#000000"/>
+          <path d="M 22 -18 C 14 -28 6 -18 10 -8 C 16 -4 24 -8 22 -18 Z" fill="#000000"/>
+          
+          <!-- Glowing Eye Center Dots -->
+          <circle cx="-16" cy="-14" r="3" fill="#FCEE09" filter="url(#glow-yellow-intense)"/>
+          <circle cx="16" cy="-14" r="3" fill="#FCEE09" filter="url(#glow-yellow-intense)"/>
+
+          <!-- Triangular Nose Cavity -->
+          <polygon points="0,-4 -6,8 6,8" fill="#000000"/>
+
+          <!-- Aggressive Fangs / Teeth Grid -->
+          <path d="M -12 24 L -12 40 L -8 24 M -8 24 L -8 42 L -4 24 M -4 24 L 0 44 L 4 24 M 4 24 L 8 42 L 8 24 M 8 24 L 12 40 L 12 24" stroke="#000000" stroke-width="2"/>
+        </g>
+
+      </g> <!-- End Skull Anim -->
+
+      <!-- DEFCON & SURRENDER NOTHING STENCIL TEXT -->
+      <g transform="translate(175, 272)" text-anchor="middle">
+        <!-- DEFCON Title -->
+        <text x="0" y="0" fill="#FF003C" class="sans" font-size="25" font-weight="900" letter-spacing="3" filter="url(#glow-red-intense)">DEFCON</text>
+        <!-- Subtext -->
+        <text x="0" y="16" fill="#FCEE09" class="mono" font-size="9" font-weight="800" letter-spacing="2">★ SURRENDER NOTHING ★</text>
+      </g>
+
+    </g> <!-- End Logo Graphic Group -->
+
+    <!-- Status Block at Bottom Left -->
+    <g transform="translate(18, 335)" class="mono" font-size="10.5">
+      <text x="0" y="0" fill="#94A3B8">STATUS  : <tspan fill="#FF003C" font-weight="900" filter="url(#glow-red-intense)">● DEFCON 1 [ENGAGED]</tspan></text>
+      <text x="0" y="18" fill="#94A3B8">RED TEAM: <tspan fill="#FCEE09" font-weight="800">EXPLOIT &amp; PENTEST OPS</tspan></text>
+      <text x="0" y="38" fill="#00FF66" font-weight="800">&gt;_ root@defcon:~# pwn --all<tspan fill="#FF003C" class="cursor-blink"> █</tspan></text>
     </g>
   </g>
 
@@ -144,101 +211,101 @@
   <!-- RIGHT COLUMN: DEVELOPER PROFILE & RED TEAM DATA (~70%)    -->
   <!-- ======================================================== -->
   <g transform="translate(388, 38)">
-    <polygon points="0,12 12,0 750,0 762,12 762,396 750,408 12,408 0,396" fill="#080A12" fill-opacity="0.94" stroke="#FCEE09" stroke-width="1.5"/>
+    <polygon points="0,12 12,0 750,0 762,12 762,396 750,408 12,408 0,396" fill="#0A0305" fill-opacity="0.95" stroke="#FF003C" stroke-width="1.5"/>
     
     <!-- Header Bar -->
-    <polygon points="0,12 12,0 750,0 762,12 762,34 0,34" fill="#FCEE09"/>
-    <circle cx="18" cy="17" r="4.5" fill="#FF0055"/>
-    <circle cx="32" cy="17" r="4.5" fill="#00F0FF"/>
+    <polygon points="0,12 12,0 750,0 762,12 762,34 0,34" fill="#FF003C"/>
+    <circle cx="18" cy="17" r="4.5" fill="#FCEE09"/>
+    <circle cx="32" cy="17" r="4.5" fill="#00FF66"/>
     <circle cx="46" cy="17" r="4.5" fill="#000000"/>
-    <text x="381" y="21" text-anchor="middle" fill="#000000" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ CYBERPUNK_PROFILE // BHUVAN_KUMAR_HM ]</text>
-    <line x1="0" y1="34" x2="762" y2="34" stroke="#FCEE09"/>
+    <text x="381" y="21" text-anchor="middle" fill="#FFFFFF" class="mono" font-size="11" font-weight="900" letter-spacing="1">[ DEFCON_PROFILE // BHUVAN_KUMAR_HM ]</text>
+    <line x1="0" y1="34" x2="762" y2="34" stroke="#FF003C"/>
 
     <!-- Content Area -->
     <g transform="translate(28, 52)">
       
-      <!-- Name Header in Iconic Cyberpunk Yellow & Pink -->
+      <!-- Name Header with Red/Yellow Gradient -->
       <text x="0" y="22" fill="#94A3B8" class="sans" font-size="15" font-weight="600">Hi 👋, I'm</text>
-      <text x="86" y="24" fill="url(#cp-grad)" class="sans" font-size="26" font-weight="900" letter-spacing="1">BHUVAN KUMAR H M</text>
+      <text x="86" y="24" fill="url(#accent-red-yellow)" class="sans" font-size="26" font-weight="900" letter-spacing="1">BHUVAN KUMAR H M</text>
       
       <!-- Tagline -->
-      <text x="0" y="55" fill="#FCEE09" class="mono" font-size="14" font-weight="800">&gt; CYBERSECURITY ENG <tspan fill="#FF0055">|</tspan> PENETRATION TESTER <tspan fill="#FF0055">|</tspan> <tspan fill="#FF0055" font-weight="900">CEH</tspan> <tspan fill="#FF0055">|</tspan> <tspan fill="#00F0FF">AI SECURITY</tspan></text>
+      <text x="0" y="55" fill="#FF003C" class="mono" font-size="14" font-weight="800">&gt; CYBERSECURITY ENG <tspan fill="#FCEE09">|</tspan> PENETRATION TESTER <tspan fill="#FCEE09">|</tspan> <tspan fill="#FCEE09" font-weight="900">CEH</tspan> <tspan fill="#FCEE09">|</tspan> <tspan fill="#00FF66">AI SECURITY</tspan></text>
 
-      <line x1="0" y1="70" x2="706" y2="70" stroke="rgba(252, 238, 9, 0.3)"/>
+      <line x1="0" y1="70" x2="706" y2="70" stroke="rgba(255, 0, 60, 0.3)"/>
 
-      <!-- Clean Metadata List -->
+      <!-- Clean Non-Overlapping Metadata List -->
       <g transform="translate(0, 96)" class="mono" font-size="13">
         <!-- Row 1: Location -->
         <g transform="translate(0, 0)">
-          <text x="0" y="0" fill="#FCEE09" font-weight="800">[LOC]</text>
-          <text x="52" y="0" fill="#00F0FF" font-weight="700">Location    :</text>
+          <text x="0" y="0" fill="#FF003C" font-weight="800">[LOC]</text>
+          <text x="52" y="0" fill="#FCEE09" font-weight="700">Location    :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">Karnataka, India</text>
         </g>
         <!-- Row 2: Education -->
         <g transform="translate(0, 28)">
-          <text x="0" y="0" fill="#FCEE09" font-weight="800">[EDU]</text>
-          <text x="52" y="0" fill="#00F0FF" font-weight="700">Education   :</text>
+          <text x="0" y="0" fill="#FF003C" font-weight="800">[EDU]</text>
+          <text x="52" y="0" fill="#FCEE09" font-weight="700">Education   :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">B.E. Computer Science Engineering (Grad 2027)</text>
         </g>
         <!-- Row 3: Credentials -->
         <g transform="translate(0, 56)">
-          <text x="0" y="0" fill="#FF0055" font-weight="800">[SEC]</text>
-          <text x="52" y="0" fill="#FF0055" font-weight="700">Credentials :</text>
+          <text x="0" y="0" fill="#00FF66" font-weight="800">[SEC]</text>
+          <text x="52" y="0" fill="#00FF66" font-weight="700">Credentials :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">CEH Certified • Pentesting • Reverse Engineering</text>
         </g>
         <!-- Row 4: Focus -->
         <g transform="translate(0, 84)">
-          <text x="0" y="0" fill="#FF0055" font-weight="800">[FOC]</text>
-          <text x="52" y="0" fill="#FF0055" font-weight="700">Current Focus:</text>
+          <text x="0" y="0" fill="#00FF66" font-weight="800">[FOC]</text>
+          <text x="52" y="0" fill="#00FF66" font-weight="700">Current Focus:</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">AI Security Research, DuckyBuilder &amp; SOC Automation</text>
         </g>
       </g>
 
-      <line x1="0" y1="210" x2="706" y2="210" stroke="rgba(252, 238, 9, 0.3)"/>
+      <line x1="0" y1="210" x2="706" y2="210" stroke="rgba(255, 0, 60, 0.3)"/>
 
-      <!-- Tech Stack Badges (Cyberpunk 2077 Yellow & Cyan) -->
+      <!-- Red & Yellow Tech Stack Badges -->
       <g transform="translate(0, 230)">
-        <text x="0" y="0" fill="#FCEE09" class="mono" font-size="11" font-weight="800" letter-spacing="1.5">// NIGHT_CITY_TOOLKIT &amp; EXPLOITS</text>
+        <text x="0" y="0" fill="#FF003C" class="mono" font-size="11" font-weight="800" letter-spacing="1.5">// DEFCON_EXPLOIT_STACK &amp; TOOLKIT</text>
         
         <g transform="translate(0, 14)">
           <!-- Python -->
-          <polygon points="0,0 72,0 80,8 80,26 8,26 0,18" fill="#1C1A04" stroke="#FCEE09" stroke-width="1.2"/>
-          <text x="40" y="17" text-anchor="middle" fill="#FCEE09" class="mono" font-size="10.5" font-weight="800">▶ Python</text>
+          <polygon points="0,0 72,0 80,8 80,26 8,26 0,18" fill="#1A030A" stroke="#FF003C" stroke-width="1.2"/>
+          <text x="40" y="17" text-anchor="middle" fill="#FF003C" class="mono" font-size="10.5" font-weight="800">▶ Python</text>
 
           <!-- Pentesting -->
-          <polygon points="88,0 180,0 188,8 188,26 96,26 88,18" fill="#1C060D" stroke="#FF0055" stroke-width="1.2"/>
-          <text x="138" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="10.5" font-weight="800">▶ Pentesting</text>
+          <polygon points="88,0 180,0 188,8 188,26 96,26 88,18" fill="#1C1A04" stroke="#FCEE09" stroke-width="1.2"/>
+          <text x="138" y="17" text-anchor="middle" fill="#FCEE09" class="mono" font-size="10.5" font-weight="800">▶ Pentesting</text>
 
           <!-- Burp Suite -->
-          <polygon points="196,0 286,0 294,8 294,26 204,26 196,18" fill="#1C060D" stroke="#FF0055" stroke-width="1.2"/>
-          <text x="245" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="10.5" font-weight="800">▶ Burp Suite</text>
+          <polygon points="196,0 286,0 294,8 294,26 204,26 196,18" fill="#1A030A" stroke="#FF003C" stroke-width="1.2"/>
+          <text x="245" y="17" text-anchor="middle" fill="#FF003C" class="mono" font-size="10.5" font-weight="800">▶ Burp Suite</text>
 
           <!-- AI Security -->
-          <polygon points="302,0 394,0 402,8 402,26 310,26 302,18" fill="#04181C" stroke="#00F0FF" stroke-width="1.2"/>
-          <text x="352" y="17" text-anchor="middle" fill="#00F0FF" class="mono" font-size="10.5" font-weight="800">▶ AI Security</text>
+          <polygon points="302,0 394,0 402,8 402,26 310,26 302,18" fill="#041A0E" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="352" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="10.5" font-weight="800">▶ AI Security</text>
 
           <!-- Wazuh SIEM -->
-          <polygon points="410,0 508,0 516,8 516,26 418,26 410,18" fill="#04181C" stroke="#00F0FF" stroke-width="1.2"/>
-          <text x="463" y="17" text-anchor="middle" fill="#00F0FF" class="mono" font-size="10.5" font-weight="800">▶ Wazuh SIEM</text>
+          <polygon points="410,0 508,0 516,8 516,26 418,26 410,18" fill="#041A0E" stroke="#00FF66" stroke-width="1.2"/>
+          <text x="463" y="17" text-anchor="middle" fill="#00FF66" class="mono" font-size="10.5" font-weight="800">▶ Wazuh SIEM</text>
 
           <!-- Docker -->
           <polygon points="524,0 594,0 602,8 602,26 532,26 524,18" fill="#1C1A04" stroke="#FCEE09" stroke-width="1.2"/>
           <text x="563" y="17" text-anchor="middle" fill="#FCEE09" class="mono" font-size="10.5" font-weight="800">▶ Docker</text>
 
           <!-- Kali Linux -->
-          <polygon points="610,0 698,0 706,8 706,26 618,26 610,18" fill="#1C060D" stroke="#FF0055" stroke-width="1.2"/>
-          <text x="658" y="17" text-anchor="middle" fill="#FF0055" class="mono" font-size="10.5" font-weight="800">▶ Kali Linux</text>
+          <polygon points="610,0 698,0 706,8 706,26 618,26 610,18" fill="#1A030A" stroke="#FF003C" stroke-width="1.2"/>
+          <text x="658" y="17" text-anchor="middle" fill="#FF003C" class="mono" font-size="10.5" font-weight="800">▶ Kali Linux</text>
         </g>
       </g>
 
       <!-- Footer Handles -->
       <g transform="translate(0, 298)">
-        <line x1="0" y1="0" x2="706" y2="0" stroke="rgba(252, 238, 9, 0.3)"/>
+        <line x1="0" y1="0" x2="706" y2="0" stroke="rgba(255, 0, 60, 0.3)"/>
         <g transform="translate(0, 14)" class="mono" font-size="11" font-weight="800">
-          <text x="0" y="14" fill="#94A3B8">NETRUNNER_ID: <tspan fill="#FCEE09">157491016</tspan></text>
-          <text x="170" y="14" fill="#94A3B8">GH: <tspan fill="#00F0FF">@B2Kmonster</tspan></text>
-          <text x="330" y="14" fill="#94A3B8">IN: <tspan fill="#00F0FF">bhuvan-kumar-hm</tspan></text>
-          <text x="520" y="14" fill="#94A3B8">EMAIL: <tspan fill="#FF0055">bhuvankumarhm25@gmail.com</tspan></text>
+          <text x="0" y="14" fill="#94A3B8">DEFCON_ID: <tspan fill="#FF003C">157491016</tspan></text>
+          <text x="170" y="14" fill="#94A3B8">GH: <tspan fill="#FCEE09">@B2Kmonster</tspan></text>
+          <text x="330" y="14" fill="#94A3B8">IN: <tspan fill="#FCEE09">bhuvan-kumar-hm</tspan></text>
+          <text x="520" y="14" fill="#94A3B8">EMAIL: <tspan fill="#00FF66">bhuvankumarhm25@gmail.com</tspan></text>
         </g>
       </g>
 
