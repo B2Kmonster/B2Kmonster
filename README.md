@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="dark.svg#gh-dark-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
-  <img src="light.svg#gh-light-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
+  <img src="dark.svg?v=defcon#gh-dark-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
+  <img src="light.svg?v=defcon#gh-light-mode-only" alt="Bhuvan Kumar H M DEFCON Banner" width="100%" />
 </p>
 
 <br/>
