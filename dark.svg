@@ -1,454 +1,208 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 430" width="1180" height="430">
   <defs>
-    <!-- Dark Mode Master Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030712"/>
-      <stop offset="50%" stop-color="#0B0F19"/>
-      <stop offset="100%" stop-color="#030712"/>
+    <!-- Master Dark Background -->
+    <linearGradient id="bg-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B11"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#080B11"/>
     </linearGradient>
 
-    <!-- Accent Animated Gradient -->
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7C3AED">
-        <animate attributeName="stop-color" values="#7C3AED; #22D3EE; #10B981; #7C3AED" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" stop-color="#22D3EE">
-        <animate attributeName="stop-color" values="#22D3EE; #10B981; #7C3AED; #22D3EE" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#10B981">
-        <animate attributeName="stop-color" values="#10B981; #7C3AED; #22D3EE; #10B981" dur="8s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-
-    <!-- ASCII Shifting Gradient -->
-    <linearGradient id="ascii-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#22D3EE">
-        <animate attributeName="stop-color" values="#22D3EE; #A855F7; #10B981; #22D3EE" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#A855F7">
-        <animate attributeName="stop-color" values="#A855F7; #10B981; #22D3EE; #A855F7" dur="6s" repeatCount="indefinite"/>
-      </stop>
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="accent-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
     </linearGradient>
 
     <!-- Border Shimmer Gradient -->
-    <linearGradient id="border-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(124, 58, 237, 0.6)"/>
-      <stop offset="30%" stop-color="rgba(255, 255, 255, 0.08)"/>
-      <stop offset="70%" stop-color="rgba(34, 211, 238, 0.6)"/>
-      <stop offset="100%" stop-color="rgba(16, 185, 129, 0.4)"/>
+    <linearGradient id="border-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(99, 102, 241, 0.5)"/>
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.1)"/>
+      <stop offset="100%" stop-color="rgba(16, 185, 129, 0.5)"/>
     </linearGradient>
 
     <!-- Radial Background Glows -->
-    <radialGradient id="glow-purple" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    <radialGradient id="glow-purple" cx="15%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="glow-cyan" cx="80%" cy="80%" r="50%">
-      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    <radialGradient id="glow-cyan" cx="85%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="glow-emerald" cx="50%" cy="30%" r="40%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Pill Gradients -->
-    <linearGradient id="pill-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9"/>
-    </linearGradient>
-
-    <!-- Filters -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-
-    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow-dark" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
     </filter>
-
-    <filter id="pill-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#22D3EE" flood-opacity="0.3"/>
-    </filter>
-
-    <!-- Clip Paths for Typing and Reveals -->
-    <clipPath id="ascii-reveal">
-      <rect x="0" y="0" width="416" height="562">
-        <animate attributeName="height" values="0; 562" dur="1.8s" keyTimes="0; 1" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze"/>
-      </rect>
-    </clipPath>
-
-    <clipPath id="terminal-clip">
-      <rect x="0" y="0" width="696" height="562"/>
-    </clipPath>
-
-    <!-- Typing Clips for Roles -->
-    <clipPath id="type-clip-1">
-      <rect x="0" y="0" width="0" height="40">
-        <animate attributeName="width" values="0; 340; 340; 0; 0" keyTimes="0; 0.15; 0.85; 0.98; 1" dur="15s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="type-clip-2">
-      <rect x="0" y="0" width="0" height="40">
-        <animate attributeName="width" values="0; 0; 260; 260; 0; 0" keyTimes="0; 0.20; 0.35; 0.85; 0.98; 1" dur="15s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="type-clip-3">
-      <rect x="0" y="0" width="0" height="40">
-        <animate attributeName="width" values="0; 0; 310; 310; 0; 0" keyTimes="0; 0.40; 0.55; 0.85; 0.98; 1" dur="15s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="type-clip-4">
-      <rect x="0" y="0" width="0" height="40">
-        <animate attributeName="width" values="0; 0; 250; 250; 0; 0" keyTimes="0; 0.60; 0.75; 0.85; 0.98; 1" dur="15s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="type-clip-5">
-      <rect x="0" y="0" width="0" height="40">
-        <animate attributeName="width" values="0; 0; 360; 360; 0; 0" keyTimes="0; 0.80; 0.92; 0.98; 1" dur="15s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
   </defs>
 
   <style>
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-7px); }
-    }
-    @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(610px); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
-    }
-    @keyframes rowFadeIn {
-      0% { opacity: 0; transform: translateX(-12px); }
-      100% { opacity: 1; transform: translateX(0px); }
-    }
-    @keyframes pillHover {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-    }
-
-    .cursor { animation: blink 0.8s infinite; }
-    .floating-ascii { animation: float 5s ease-in-out infinite; }
-    .scanline-beam { animation: scanline 8s linear infinite; }
-    .bg-pulse { animation: pulseGlow 6s ease-in-out infinite; }
+    .mono { font-family: 'Fira Code', Consolas, Monaco, 'Courier New', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
     
-    .row-1 { animation: rowFadeIn 0.6s ease-out 0.4s forwards; opacity: 0; }
-    .row-2 { animation: rowFadeIn 0.6s ease-out 0.6s forwards; opacity: 0; }
-    .row-3 { animation: rowFadeIn 0.6s ease-out 0.8s forwards; opacity: 0; }
-    .row-4 { animation: rowFadeIn 0.6s ease-out 1.0s forwards; opacity: 0; }
-    .row-5 { animation: rowFadeIn 0.6s ease-out 1.2s forwards; opacity: 0; }
-    .row-6 { animation: rowFadeIn 0.6s ease-out 1.4s forwards; opacity: 0; }
-    .skills-row { animation: rowFadeIn 0.6s ease-out 1.6s forwards; opacity: 0; }
-    .social-row { animation: rowFadeIn 0.6s ease-out 1.8s forwards; opacity: 0; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+    @keyframes scanline { 0% { transform: translateY(0px); } 100% { transform: translateY(430px); } }
 
-    .tech-pill {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .tech-pill:hover {
-      filter: url(#pill-glow);
-    }
-
-    .text-mono {
-      font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, Monaco, monospace;
-    }
-    .text-sans {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
+    .cursor-blink { animation: blink 0.9s infinite; }
+    .bg-pulse { animation: pulseGlow 5s ease-in-out infinite; }
+    .scan-beam { animation: scanline 7s linear infinite; }
   </style>
 
-  <!-- Canvas Outer Container -->
-  <rect x="0" y="0" width="1180" height="610" rx="20" fill="url(#bg-grad)" stroke="url(#border-shimmer)" stroke-width="1.5" filter="url(#soft-shadow)"/>
+  <!-- Outer Card Container -->
+  <rect x="0" y="0" width="1180" height="430" rx="16" fill="url(#bg-dark)" stroke="url(#border-dark)" stroke-width="1.5" filter="url(#shadow-dark)"/>
 
-  <!-- Dynamic Floating Radial Glows -->
+  <!-- Background Glow Blobs -->
   <g class="bg-pulse">
-    <circle cx="200" cy="150" r="280" fill="url(#glow-purple)"/>
-    <circle cx="950" cy="450" r="320" fill="url(#glow-cyan)"/>
-    <circle cx="600" cy="200" r="220" fill="url(#glow-emerald)"/>
+    <circle cx="180" cy="120" r="260" fill="url(#glow-purple)"/>
+    <circle cx="1000" cy="320" r="280" fill="url(#glow-cyan)"/>
   </g>
 
-  <!-- Background Grid Pattern -->
-  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
-    <line x1="0" y1="100" x2="1180" y2="100"/>
-    <line x1="0" y1="200" x2="1180" y2="200"/>
-    <line x1="0" y1="300" x2="1180" y2="300"/>
-    <line x1="0" y1="400" x2="1180" y2="400"/>
-    <line x1="0" y1="500" x2="1180" y2="500"/>
-    <line x1="200" y1="0" x2="200" y2="610"/>
-    <line x1="400" y1="0" x2="400" y2="610"/>
-    <line x1="600" y1="0" x2="600" y2="610"/>
-    <line x1="800" y1="0" x2="800" y2="610"/>
-    <line x1="1000" y1="0" x2="1000" y2="610"/>
+  <!-- Subtle Dot Grid Background -->
+  <g fill="rgba(255, 255, 255, 0.05)">
+    <circle cx="100" cy="60" r="1.5"/><circle cx="200" cy="60" r="1.5"/><circle cx="300" cy="60" r="1.5"/><circle cx="400" cy="60" r="1.5"/><circle cx="500" cy="60" r="1.5"/><circle cx="600" cy="60" r="1.5"/><circle cx="700" cy="60" r="1.5"/><circle cx="800" cy="60" r="1.5"/><circle cx="900" cy="60" r="1.5"/><circle cx="1000" cy="60" r="1.5"/><circle cx="1100" cy="60" r="1.5"/>
+    <circle cx="100" cy="160" r="1.5"/><circle cx="200" cy="160" r="1.5"/><circle cx="300" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="500" cy="160" r="1.5"/><circle cx="600" cy="160" r="1.5"/><circle cx="700" cy="160" r="1.5"/><circle cx="800" cy="160" r="1.5"/><circle cx="900" cy="160" r="1.5"/><circle cx="1000" cy="160" r="1.5"/><circle cx="1100" cy="160" r="1.5"/>
+    <circle cx="100" cy="260" r="1.5"/><circle cx="200" cy="260" r="1.5"/><circle cx="300" cy="260" r="1.5"/><circle cx="400" cy="260" r="1.5"/><circle cx="500" cy="260" r="1.5"/><circle cx="600" cy="260" r="1.5"/><circle cx="700" cy="260" r="1.5"/><circle cx="800" cy="260" r="1.5"/><circle cx="900" cy="260" r="1.5"/><circle cx="1000" cy="260" r="1.5"/><circle cx="1100" cy="260" r="1.5"/>
+    <circle cx="100" cy="360" r="1.5"/><circle cx="200" cy="360" r="1.5"/><circle cx="300" cy="360" r="1.5"/><circle cx="400" cy="360" r="1.5"/><circle cx="500" cy="360" r="1.5"/><circle cx="600" cy="360" r="1.5"/><circle cx="700" cy="360" r="1.5"/><circle cx="800" cy="360" r="1.5"/><circle cx="900" cy="360" r="1.5"/><circle cx="1000" cy="360" r="1.5"/><circle cx="1100" cy="360" r="1.5"/>
   </g>
 
-  <!-- Animated Scanline Sweep -->
-  <rect x="0" y="0" width="1180" height="8" fill="rgba(34, 211, 238, 0.15)" class="scanline-beam"/>
+  <!-- Scanline Beam -->
+  <rect x="0" y="0" width="1180" height="4" fill="rgba(6, 182, 212, 0.2)" class="scan-beam"/>
 
   <!-- ======================================================== -->
-  <!-- LEFT PANEL: CYBER TERMINAL & ASCII PORTRAIT (~38%)      -->
+  <!-- LEFT HUD PANEL: CYBER SECURITY EMBLEM                   -->
   <!-- ======================================================== -->
   <g transform="translate(24, 24)">
-    <!-- Glassmorphic Card Base -->
-    <rect x="0" y="0" width="416" height="562" rx="16" fill="#0F172A" fill-opacity="0.7" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2" filter="url(#soft-shadow)"/>
+    <rect x="0" y="0" width="340" height="382" rx="12" fill="#0F172A" fill-opacity="0.8" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
     
-    <!-- Window Header Bar -->
-    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 400 0 C 408.84 0 416 7.16 416 16 L 416 42 L 0 42 Z" fill="rgba(15, 23, 42, 0.95)"/>
-    <circle cx="20" cy="21" r="5.5" fill="#FF5F56"/>
-    <circle cx="38" cy="21" r="5.5" fill="#FFBD2E"/>
-    <circle cx="56" cy="21" r="5.5" fill="#27C93F"/>
-    <text x="208" y="25" text-anchor="middle" fill="#94A3B8" class="text-mono" font-size="12" font-weight="600">b2kmonster@cyber:~</text>
-    <line x1="0" y1="42" x2="416" y2="42" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <!-- Panel Header -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 328 0 C 334.63 0 340 5.37 340 12 L 340 38 L 0 38 Z" fill="rgba(15, 23, 42, 0.95)"/>
+    <circle cx="18" cy="19" r="5" fill="#FF5F56"/>
+    <circle cx="34" cy="19" r="5" fill="#FFBD2E"/>
+    <circle cx="50" cy="19" r="5" fill="#27C93F"/>
+    <text x="170" y="23" text-anchor="middle" fill="#94A3B8" class="mono" font-size="11" font-weight="600">b2kmonster@cyber:~</text>
+    <line x1="0" y1="38" x2="340" y2="38" stroke="rgba(255, 255, 255, 0.08)"/>
 
-    <!-- ASCII Portrait Container with Reveal Clip & Floating Motion -->
-    <g clip-path="url(#ascii-reveal)">
-      <g class="floating-ascii" transform="translate(20, 60)">
-        
-        <!-- Animated Shifting ASCII Text -->
-        <g fill="url(#ascii-grad)" class="text-mono" font-size="12.5" font-weight="700" letter-spacing="1">
-          <text x="0" y="20"> ┌─────────────────────────────┐</text>
-          <text x="0" y="38"> │   ░▒▓█ B2KMONSTER █▓▒░      │</text>
-          <text x="0" y="56"> └─────────────────────────────┘</text>
-          <text x="0" y="80">         .---.         .---.</text>
-          <text x="0" y="98">        /     \  .-.  /     \</text>
-          <text x="0" y="116">       |   (o) \|   |/ (o)   |</text>
-          <text x="0" y="134">       |       /  ^  \       |</text>
-          <text x="0" y="152">        \     /  ===  \     /</text>
-          <text x="0" y="170">         '---' '--...--' '---'</text>
-          <text x="0" y="194">       .--------------------.</text>
-          <text x="0" y="212">      /   CYBERSECURITY ENG   \</text>
-          <text x="0" y="230">     /   .----------------.    \</text>
-          <text x="0" y="248">    |   | >_ PENETRATION   |    |</text>
-          <text x="0" y="266">    |   |    TESTING       |    |</text>
-          <text x="0" y="284">    |   | >_ AI SECURITY   |    |</text>
-          <text x="0" y="302">     \   \    RESEARCH     /    /</text>
-          <text x="0" y="320">      \   '----------------'   /</text>
-          <text x="0" y="338">       '----------------------'</text>
-          <text x="0" y="362">      /   /|            |\   \</text>
-          <text x="0" y="380">     '---' '--........--' '---'</text>
-        </g>
+    <!-- Central Cyber Emblem Graphic (Pixel-Perfect Vector Shield HUD) -->
+    <g transform="translate(170, 170)">
+      <!-- Outer Rotating Rings -->
+      <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(6, 182, 212, 0.2)" stroke-width="1.5" stroke-dasharray="8 6"/>
+      <circle cx="0" cy="0" r="70" fill="none" stroke="rgba(99, 102, 241, 0.3)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="55" fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" stroke-dasharray="12 4"/>
 
-        <!-- Cyber Terminal Status & Blinking Prompt -->
-        <g transform="translate(15, 415)" class="text-mono" font-size="11">
-          <text x="0" y="0" fill="#94A3B8">STATUS: <tspan fill="#10B981" font-weight="700">● ONLINE</tspan></text>
-          <text x="0" y="20" fill="#94A3B8">LAB: <tspan fill="#22D3EE">soc-n8n-lab [ACTIVE]</tspan></text>
-          <text x="0" y="40" fill="#7C3AED" font-weight="700">&gt;_ bash ./init_sec.sh<tspan fill="#22D3EE" class="cursor"> █</tspan></text>
-        </g>
+      <!-- Vector Shield Icon -->
+      <path d="M 0 -38 L 30 -22 L 30 10 C 30 30 0 45 0 45 C 0 45 -30 30 -30 10 L -30 -22 Z" fill="none" stroke="url(#accent-dark)" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 0 -26 L 20 -14 L 20 8 C 20 22 0 32 0 32 C 0 32 -20 22 -20 8 L -20 -14 Z" fill="rgba(6, 182, 212, 0.15)" stroke="#06B6D4" stroke-width="1.5"/>
 
-      </g>
+      <!-- Lock Keyhole Motif inside Shield -->
+      <circle cx="0" cy="-3" r="6" fill="#10B981"/>
+      <polygon points="-4, -1 4, -1 6, 14 -6, 14" fill="#10B981"/>
+    </g>
+
+    <!-- Status Output at Bottom -->
+    <g transform="translate(20, 310)" class="mono" font-size="11">
+      <text x="0" y="0" fill="#94A3B8">STATUS : <tspan fill="#10B981" font-weight="700">● ONLINE</tspan></text>
+      <text x="0" y="20" fill="#94A3B8">TARGET : <tspan fill="#06B6D4">AI SOC &amp; PENTEST LAB</tspan></text>
+      <text x="0" y="40" fill="#6366F1" font-weight="700">&gt;_ ./init_profile.sh<tspan fill="#06B6D4" class="cursor-blink"> █</tspan></text>
     </g>
   </g>
 
   <!-- ======================================================== -->
-  <!-- RIGHT PANEL: TERMINAL WINDOW & DEVELOPER BIO (~62%)     -->
+  <!-- RIGHT PANEL: DEVELOPER PROFILE DETAILS                   -->
   <!-- ======================================================== -->
-  <g transform="translate(460, 24)">
-    <!-- Glassmorphic Card Base -->
-    <rect x="0" y="0" width="696" height="562" rx="16" fill="#0F172A" fill-opacity="0.75" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2" filter="url(#soft-shadow)"/>
+  <g transform="translate(388, 24)">
+    <rect x="0" y="0" width="768" height="382" rx="12" fill="#0F172A" fill-opacity="0.8" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
     
-    <!-- Window Header Bar -->
-    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 680 0 C 688.84 0 696 7.16 696 16 L 696 42 L 0 42 Z" fill="rgba(15, 23, 42, 0.95)"/>
-    <circle cx="20" cy="21" r="5.5" fill="#FF5F56"/>
-    <circle cx="38" cy="21" r="5.5" fill="#FFBD2E"/>
-    <circle cx="56" cy="21" r="5.5" fill="#27C93F"/>
-    <text x="348" y="25" text-anchor="middle" fill="#94A3B8" class="text-mono" font-size="12" font-weight="600">~/bhuvan-kumar-hm/profile.sh</text>
-    <line x1="0" y1="42" x2="696" y2="42" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <!-- Panel Header Bar -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 756 0 C 762.63 0 768 5.37 768 12 L 768 38 L 0 38 Z" fill="rgba(15, 23, 42, 0.95)"/>
+    <circle cx="18" cy="19" r="5" fill="#FF5F56"/>
+    <circle cx="34" cy="19" r="5" fill="#FFBD2E"/>
+    <circle cx="50" cy="19" r="5" fill="#27C93F"/>
+    <text x="384" y="23" text-anchor="middle" fill="#94A3B8" class="mono" font-size="11" font-weight="600">~/bhuvan-kumar-hm/profile.sh</text>
+    <line x1="0" y1="38" x2="768" y2="38" stroke="rgba(255, 255, 255, 0.08)"/>
 
-    <!-- Terminal Content Area -->
-    <g transform="translate(32, 65)">
+    <!-- Developer Bio & Info -->
+    <g transform="translate(28, 55)">
       
-      <!-- Greeting & Header -->
-      <text x="0" y="22" fill="#94A3B8" class="text-sans" font-size="16" font-weight="500">Hi 👋, I'm</text>
-      <text x="92" y="24" fill="url(#accent-grad)" class="text-sans" font-size="26" font-weight="800" letter-spacing="0.5">BHUVAN KUMAR H M</text>
+      <!-- Name Header -->
+      <text x="0" y="22" fill="#94A3B8" class="sans" font-size="15" font-weight="500">Hi 👋, I'm</text>
+      <text x="86" y="24" fill="url(#accent-dark)" class="sans" font-size="24" font-weight="800" letter-spacing="0.5">BHUVAN KUMAR H M</text>
       
-      <!-- Animated Dynamic Typing Roles -->
-      <g transform="translate(0, 58)">
-        <text x="0" y="0" fill="#7C3AED" class="text-mono" font-size="18" font-weight="700">&gt;</text>
-        
-        <!-- Dynamic Role 1 -->
-        <g clip-path="url(#type-clip-1)">
-          <text x="22" y="0" fill="#22D3EE" class="text-mono" font-size="17" font-weight="600">Cybersecurity Engineer<tspan fill="#F8FAFC" class="cursor">█</tspan></text>
-        </g>
-        <!-- Dynamic Role 2 -->
-        <g clip-path="url(#type-clip-2)">
-          <text x="22" y="0" fill="#10B981" class="text-mono" font-size="17" font-weight="600">Penetration Tester<tspan fill="#F8FAFC" class="cursor">█</tspan></text>
-        </g>
-        <!-- Dynamic Role 3 -->
-        <g clip-path="url(#type-clip-3)">
-          <text x="22" y="0" fill="#A855F7" class="text-mono" font-size="17" font-weight="600">AI Security Researcher<tspan fill="#F8FAFC" class="cursor">█</tspan></text>
-        </g>
-        <!-- Dynamic Role 4 -->
-        <g clip-path="url(#type-clip-4)">
-          <text x="22" y="0" fill="#F59E0B" class="text-mono" font-size="17" font-weight="600">Malware Analyst<tspan fill="#F8FAFC" class="cursor">█</tspan></text>
-        </g>
-        <!-- Dynamic Role 5 -->
-        <g clip-path="url(#type-clip-5)">
-          <text x="22" y="0" fill="#3B82F6" class="text-mono" font-size="17" font-weight="600">Red Teamer &amp; Security Dev<tspan fill="#F8FAFC" class="cursor">█</tspan></text>
-        </g>
-      </g>
+      <!-- Primary Role Tagline (No overlapping typography) -->
+      <text x="0" y="55" fill="#06B6D4" class="mono" font-size="14.5" font-weight="700">&gt; Cybersecurity Engineer <tspan fill="#94A3B8">|</tspan> Penetration Tester <tspan fill="#94A3B8">|</tspan> <tspan fill="#10B981">CEH</tspan></text>
 
-      <!-- Divider line -->
-      <line x1="0" y1="80" x2="632" y2="80" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <line x1="0" y1="72" x2="712" y2="72" stroke="rgba(255, 255, 255, 0.08)"/>
 
-      <!-- Sequential Details List -->
-      <g transform="translate(0, 108)" class="text-mono" font-size="13.5">
-        
+      <!-- Clean Metadata Details List -->
+      <g transform="translate(0, 98)" class="mono" font-size="13">
         <!-- Row 1: Location -->
-        <g class="row-1" transform="translate(0, 0)">
-          <text x="0" y="0" fill="#22D3EE">📍  Location    :</text>
-          <text x="145" y="0" fill="#F8FAFC" font-weight="500">Karnataka, India</text>
+        <g transform="translate(0, 0)">
+          <text x="0" y="0" fill="#06B6D4" font-weight="600">📍  Location    :</text>
+          <text x="145" y="0" fill="#F8FAFC">Karnataka, India</text>
         </g>
-
         <!-- Row 2: Education -->
-        <g class="row-2" transform="translate(0, 26)">
-          <text x="0" y="0" fill="#7C3AED">🎓  Education   :</text>
-          <text x="145" y="0" fill="#F8FAFC" font-weight="500">B.E. Computer Science (Grad 2027)</text>
+        <g transform="translate(0, 26)">
+          <text x="0" y="0" fill="#6366F1" font-weight="600">🎓  Education   :</text>
+          <text x="145" y="0" fill="#F8FAFC">B.E. Computer Science Engineering (Grad 2027)</text>
         </g>
-
-        <!-- Row 3: Certs -->
-        <g class="row-3" transform="translate(0, 52)">
-          <text x="0" y="0" fill="#10B981">🎯  Credentials :</text>
-          <text x="145" y="0" fill="#F8FAFC" font-weight="500">CEH Certified | Pentesting | Reverse Eng</text>
+        <!-- Row 3: Credentials -->
+        <g transform="translate(0, 52)">
+          <text x="0" y="0" fill="#10B981" font-weight="600">🎯  Credentials :</text>
+          <text x="145" y="0" fill="#F8FAFC">CEH Certified • Pentesting • Reverse Engineering</text>
         </g>
-
         <!-- Row 4: Focus -->
-        <g class="row-4" transform="translate(0, 78)">
-          <text x="0" y="0" fill="#F59E0B">⚡  Current Focus:</text>
-          <text x="145" y="0" fill="#F8FAFC" font-weight="500">LLM Security, DuckyBuilder &amp; SOC Automation</text>
-        </g>
-
-        <!-- Row 5: Email -->
-        <g class="row-5" transform="translate(0, 104)">
-          <text x="0" y="0" fill="#EC4899">✉️  Email       :</text>
-          <text x="145" y="0" fill="#22D3EE" font-weight="500">bhuvankumarhm25@gmail.com</text>
-        </g>
-
-        <!-- Row 6: Portfolio -->
-        <g class="row-6" transform="translate(0, 130)">
-          <text x="0" y="0" fill="#3B82F6">🌐  GitHub      :</text>
-          <text x="145" y="0" fill="#10B981" font-weight="500">github.com/B2Kmonster</text>
+        <g transform="translate(0, 78)">
+          <text x="0" y="0" fill="#F59E0B" font-weight="600">⚡  Current Focus:</text>
+          <text x="145" y="0" fill="#F8FAFC">AI Security Research, DuckyBuilder &amp; SOC Automation</text>
         </g>
       </g>
 
-      <!-- Divider line -->
-      <line x1="0" y1="262" x2="632" y2="262" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <line x1="0" y1="202" x2="712" y2="202" stroke="rgba(255, 255, 255, 0.08)"/>
 
-      <!-- Skills Section -->
-      <g class="skills-row" transform="translate(0, 282)">
-        <text x="0" y="0" fill="#94A3B8" class="text-mono" font-size="12" font-weight="700" letter-spacing="1.5">// CORE TECH &amp; SECURITY STACK</text>
+      <!-- Tech Skills Grid -->
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" fill="#94A3B8" class="mono" font-size="11" font-weight="700" letter-spacing="1.5">// TECH &amp; SECURITY STACK</text>
         
-        <!-- Skill Pills Grid -->
-        <g transform="translate(0, 16)">
-          <!-- Row 1 Pills -->
+        <g transform="translate(0, 14)">
           <!-- Python -->
-          <g class="tech-pill" transform="translate(0, 0)">
-            <rect width="78" height="28" rx="14" fill="url(#pill-grad)" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="39" y="18" text-anchor="middle" fill="#93C5FD" class="text-mono" font-size="11.5" font-weight="600">Python</text>
-          </g>
-          <!-- Pentesting -->
-          <g class="tech-pill" transform="translate(86, 0)">
-            <rect width="92" height="28" rx="14" fill="url(#pill-grad)" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="46" y="18" text-anchor="middle" fill="#C084FC" class="text-mono" font-size="11.5" font-weight="600">Pentesting</text>
-          </g>
-          <!-- Burp Suite -->
-          <g class="tech-pill" transform="translate(186, 0)">
-            <rect width="96" height="28" rx="14" fill="url(#pill-grad)" stroke="#F97316" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="48" y="18" text-anchor="middle" fill="#FDBA74" class="text-mono" font-size="11.5" font-weight="600">Burp Suite</text>
-          </g>
-          <!-- AI Security -->
-          <g class="tech-pill" transform="translate(290, 0)">
-            <rect width="98" height="28" rx="14" fill="url(#pill-grad)" stroke="#22D3EE" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="49" y="18" text-anchor="middle" fill="#67E8F9" class="text-mono" font-size="11.5" font-weight="600">AI Security</text>
-          </g>
-          <!-- Wazuh SIEM -->
-          <g class="tech-pill" transform="translate(396, 0)">
-            <rect width="102" height="28" rx="14" fill="url(#pill-grad)" stroke="#10B981" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="51" y="18" text-anchor="middle" fill="#6EE7B7" class="text-mono" font-size="11.5" font-weight="600">Wazuh SIEM</text>
-          </g>
-          <!-- Docker -->
-          <g class="tech-pill" transform="translate(506, 0)">
-            <rect width="72" height="28" rx="14" fill="url(#pill-grad)" stroke="#06B6D4" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="36" y="18" text-anchor="middle" fill="#67E8F9" class="text-mono" font-size="11.5" font-weight="600">Docker</text>
-          </g>
+          <rect x="0" y="0" width="76" height="26" rx="6" fill="#1E293B" stroke="#6366F1" stroke-width="1"/>
+          <text x="38" y="17" text-anchor="middle" fill="#A5B4FC" class="mono" font-size="11" font-weight="600">Python</text>
 
-          <!-- Row 2 Pills -->
-          <!-- C / C++ -->
-          <g class="tech-pill" transform="translate(0, 36)">
-            <rect width="66" height="28" rx="14" fill="url(#pill-grad)" stroke="#6366F1" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="33" y="18" text-anchor="middle" fill="#A5B4FC" class="text-mono" font-size="11.5" font-weight="600">C / C++</text>
-          </g>
-          <!-- Linux / Kali -->
-          <g class="tech-pill" transform="translate(74, 36)">
-            <rect width="94" height="28" rx="14" fill="url(#pill-grad)" stroke="#EAB308" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="47" y="18" text-anchor="middle" fill="#FDE047" class="text-mono" font-size="11.5" font-weight="600">Linux / Kali</text>
-          </g>
-          <!-- Active Directory -->
-          <g class="tech-pill" transform="translate(176, 36)">
-            <rect width="124" height="28" rx="14" fill="url(#pill-grad)" stroke="#EC4899" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="62" y="18" text-anchor="middle" fill="#F472B6" class="text-mono" font-size="11.5" font-weight="600">Active Directory</text>
-          </g>
-          <!-- Malware Analysis -->
-          <g class="tech-pill" transform="translate(308, 36)">
-            <rect width="132" height="28" rx="14" fill="url(#pill-grad)" stroke="#EF4444" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="66" y="18" text-anchor="middle" fill="#FCA5A5" class="text-mono" font-size="11.5" font-weight="600">Malware Analysis</text>
-          </g>
-          <!-- PowerShell -->
-          <g class="tech-pill" transform="translate(448, 36)">
-            <rect width="96" height="28" rx="14" fill="url(#pill-grad)" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="48" y="18" text-anchor="middle" fill="#93C5FD" class="text-mono" font-size="11.5" font-weight="600">PowerShell</text>
-          </g>
-          <!-- Bash -->
-          <g class="tech-pill" transform="translate(552, 36)">
-            <rect width="60" height="28" rx="14" fill="url(#pill-grad)" stroke="#10B981" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="30" y="18" text-anchor="middle" fill="#6EE7B7" class="text-mono" font-size="11.5" font-weight="600">Bash</text>
-          </g>
+          <!-- Pentesting -->
+          <rect x="84" y="0" width="94" height="26" rx="6" fill="#1E293B" stroke="#7C3AED" stroke-width="1"/>
+          <text x="131" y="17" text-anchor="middle" fill="#C084FC" class="mono" font-size="11" font-weight="600">Pentesting</text>
+
+          <!-- Burp Suite -->
+          <rect x="186" y="0" width="94" height="26" rx="6" fill="#1E293B" stroke="#F97316" stroke-width="1"/>
+          <text x="233" y="17" text-anchor="middle" fill="#FDBA74" class="mono" font-size="11" font-weight="600">Burp Suite</text>
+
+          <!-- AI Security -->
+          <rect x="288" y="0" width="96" height="26" rx="6" fill="#1E293B" stroke="#06B6D4" stroke-width="1"/>
+          <text x="336" y="17" text-anchor="middle" fill="#67E8F9" class="mono" font-size="11" font-weight="600">AI Security</text>
+
+          <!-- Wazuh SIEM -->
+          <rect x="392" y="0" width="102" height="26" rx="6" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+          <text x="443" y="17" text-anchor="middle" fill="#6EE7B7" class="mono" font-size="11" font-weight="600">Wazuh SIEM</text>
+
+          <!-- Docker -->
+          <rect x="502" y="0" width="72" height="26" rx="6" fill="#1E293B" stroke="#3B82F6" stroke-width="1"/>
+          <text x="538" y="17" text-anchor="middle" fill="#93C5FD" class="mono" font-size="11" font-weight="600">Docker</text>
+
+          <!-- Linux -->
+          <rect x="582" y="0" width="62" height="26" rx="6" fill="#1E293B" stroke="#EAB308" stroke-width="1"/>
+          <text x="613" y="17" text-anchor="middle" fill="#FDE047" class="mono" font-size="11" font-weight="600">Linux</text>
         </g>
       </g>
 
-      <!-- Social Icons & Badges Footer -->
-      <g class="social-row" transform="translate(0, 395)">
-        <line x1="0" y1="0" x2="632" y2="0" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
-        
-        <!-- Social Links List -->
-        <g transform="translate(0, 16)">
-          
-          <!-- GitHub Badge -->
-          <g transform="translate(0, 0)">
-            <rect width="138" height="32" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
-            <path d="M22 8C16.48 8 12 12.48 12 18C12 22.42 14.87 26.17 18.84 27.5C19.34 27.59 19.52 27.28 19.52 27.02C19.52 26.79 19.51 26.04 19.51 25.23C16.73 25.83 16.14 24.03 16.14 24.03C15.69 22.88 15.03 22.58 15.03 22.58C14.12 21.96 15.1 21.97 15.1 21.97C16.11 22.04 16.64 23.01 16.64 23.01C17.53 24.53 18.97 24.09 19.54 23.83C19.63 23.19 19.89 22.75 20.17 22.5C17.95 22.25 15.62 21.39 15.62 17.57C15.62 16.48 16.01 15.59 16.65 14.89C16.55 14.64 16.2 13.62 16.75 12.25C16.75 12.25 17.59 11.98 19.5 13.27C20.3 13.05 21.15 12.94 22 12.94C22.85 12.94 23.7 13.05 24.5 13.27C26.41 11.98 27.25 12.25 27.25 12.25C27.8 13.62 27.45 14.64 27.35 14.89C27.99 15.59 28.38 16.48 28.38 17.57C28.38 21.4 26.04 22.25 23.81 22.5C24.17 22.81 24.49 23.43 24.49 24.38C24.49 25.74 24.48 26.84 24.48 27.02C24.48 27.28 24.66 27.6 25.17 27.5C29.13 26.17 32 22.42 32 18C32 12.48 27.52 8 22 8Z" fill="#F8FAFC"/>
-            <text x="42" y="21" fill="#F8FAFC" class="text-sans" font-size="12" font-weight="600">@B2Kmonster</text>
-          </g>
-
-          <!-- LinkedIn Badge -->
-          <g transform="translate(150, 0)">
-            <rect width="168" height="32" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
-            <path d="M14 11H18V25H14V11ZM16 7C14.9 7 14 7.9 14 9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9C18 7.9 17.1 7 16 7ZM20 11H24V13H24.1C24.7 11.9 26.1 10.8 28.2 10.8C32.5 10.8 33.3 13.6 33.3 17.3V25H29.3V18.5C29.3 16.9 29.3 14.9 27.1 14.9C24.9 14.9 24.5 16.6 24.5 18.4V25H20.5V11Z" fill="#0A66C2"/>
-            <text x="40" y="21" fill="#F8FAFC" class="text-sans" font-size="12" font-weight="600">bhuvan-kumar-hm</text>
-          </g>
-
-          <!-- CEH Certified Badge -->
-          <g transform="translate(330, 0)">
-            <rect width="134" height="32" rx="8" fill="rgba(16, 185, 129, 0.1)" stroke="#10B981" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="18" y="20" fill="#10B981" class="text-mono" font-size="12" font-weight="700">🛡️ CEH CERTIFIED</text>
-          </g>
-
-          <!-- Red Team Badge -->
-          <g transform="translate(476, 0)">
-            <rect width="144" height="32" rx="8" fill="rgba(124, 58, 237, 0.1)" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
-            <text x="16" y="20" fill="#C084FC" class="text-mono" font-size="12" font-weight="700">⚔️ RED TEAM OPS</text>
-          </g>
-
+      <!-- Footer Badges -->
+      <g transform="translate(0, 282)">
+        <line x1="0" y1="0" x2="712" y2="0" stroke="rgba(255, 255, 255, 0.08)"/>
+        <g transform="translate(0, 12)" class="sans" font-size="12" font-weight="600">
+          <text x="0" y="14" fill="#94A3B8">GitHub: <tspan fill="#F8FAFC">@B2Kmonster</tspan></text>
+          <text x="210" y="14" fill="#94A3B8">LinkedIn: <tspan fill="#F8FAFC">bhuvan-kumar-hm</tspan></text>
+          <text x="450" y="14" fill="#94A3B8">Email: <tspan fill="#06B6D4">bhuvankumarhm25@gmail.com</tspan></text>
         </g>
       </g>
 
