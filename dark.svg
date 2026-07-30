@@ -124,7 +124,7 @@
     <!-- ======================================================== -->
     <g transform="translate(0, 0)">
       
-      <!-- Animated Rotating Outer Target Rings (NO BLUE, RED & YELLOW ONLY) -->
+      <!-- Animated Rotating Outer Target Rings -->
       <g class="hud-cw">
         <circle cx="175" cy="175" r="82" fill="none" stroke="#FCEE09" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.7"/>
       </g>
@@ -136,68 +136,52 @@
       <g class="skull-anim" filter="url(#glow-red-intense)">
         
         <!-- CROSSED DAGGER BLADES (BEHIND CIRCLE) -->
-        <!-- Left Dagger (Top-Left Blade to Bottom-Right Handle) -->
         <g transform="translate(175, 175) rotate(-35)">
-          <!-- Blade -->
           <polygon points="-8,-92 0,-115 8,-92 6,-30 -6,-30" fill="#FF003C"/>
           <line x1="0" y1="-115" x2="0" y2="-30" stroke="#FCEE09" stroke-width="1.5"/>
-          <!-- Crossguard & Handle -->
           <rect x="-18" y="-30" width="36" height="6" rx="2" fill="#FF003C"/>
           <rect x="-5" y="-24" width="10" height="35" rx="2" fill="#FF003C"/>
-          <!-- Pommel -->
           <circle cx="0" cy="14" r="7" fill="#FCEE09"/>
         </g>
 
-        <!-- Right Dagger (Top-Right Blade to Bottom-Left Handle) -->
         <g transform="translate(175, 175) rotate(35)">
-          <!-- Blade -->
           <polygon points="-8,-92 0,-115 8,-92 6,-30 -6,-30" fill="#FF003C"/>
           <line x1="0" y1="-115" x2="0" y2="-30" stroke="#FCEE09" stroke-width="1.5"/>
-          <!-- Crossguard & Handle -->
           <rect x="-18" y="-30" width="36" height="6" rx="2" fill="#FF003C"/>
           <rect x="-5" y="-24" width="10" height="35" rx="2" fill="#FF003C"/>
-          <!-- Pommel -->
           <circle cx="0" cy="14" r="7" fill="#FCEE09"/>
         </g>
 
         <!-- CIRCULAR BROKEN TARGET RING -->
         <path d="M 175 110 A 65 65 0 0 1 240 175 A 65 65 0 0 1 175 240 A 65 65 0 0 1 110 175 A 65 65 0 0 1 175 110" fill="none" stroke="#FF003C" stroke-width="6"/>
 
-        <!-- DEFCON AGPRESSIVE RED SKULL VECTOR -->
+        <!-- DEFCON AGGRESSIVE RED SKULL VECTOR -->
         <g transform="translate(175, 170)">
-          <!-- Cranium Outer Shape -->
           <path d="M -34 -30 C -34 -55 34 -55 34 -30 C 34 -10 26 5 20 20 L 14 38 L -14 38 L -20 20 C -26 5 -34 -10 -34 -30 Z" fill="#FF003C"/>
           
-          <!-- Skull Cracks & Detailing -->
           <path d="M 0 -50 L -6 -35 L 2 -25 L -4 -10" fill="none" stroke="#000000" stroke-width="2"/>
           <path d="M 12 -45 L 8 -32 L 15 -20" fill="none" stroke="#000000" stroke-width="1.5"/>
 
-          <!-- Dark Eye Sockets -->
           <path d="M -22 -18 C -14 -28 -6 -18 -10 -8 C -16 -4 -24 -8 -22 -18 Z" fill="#000000"/>
           <path d="M 22 -18 C 14 -28 6 -18 10 -8 C 16 -4 24 -8 22 -18 Z" fill="#000000"/>
           
-          <!-- Glowing Eye Center Dots -->
           <circle cx="-16" cy="-14" r="3" fill="#FCEE09" filter="url(#glow-yellow-intense)"/>
           <circle cx="16" cy="-14" r="3" fill="#FCEE09" filter="url(#glow-yellow-intense)"/>
 
-          <!-- Triangular Nose Cavity -->
           <polygon points="0,-4 -6,8 6,8" fill="#000000"/>
 
-          <!-- Aggressive Fangs / Teeth Grid -->
           <path d="M -12 24 L -12 40 L -8 24 M -8 24 L -8 42 L -4 24 M -4 24 L 0 44 L 4 24 M 4 24 L 8 42 L 8 24 M 8 24 L 12 40 L 12 24" stroke="#000000" stroke-width="2"/>
         </g>
 
-      </g> <!-- End Skull Anim -->
+      </g>
 
       <!-- DEFCON & SURRENDER NOTHING STENCIL TEXT -->
       <g transform="translate(175, 272)" text-anchor="middle">
-        <!-- DEFCON Title -->
         <text x="0" y="0" fill="#FF003C" class="sans" font-size="25" font-weight="900" letter-spacing="3" filter="url(#glow-red-intense)">DEFCON</text>
-        <!-- Subtext -->
         <text x="0" y="16" fill="#FCEE09" class="mono" font-size="9" font-weight="800" letter-spacing="2">★ SURRENDER NOTHING ★</text>
       </g>
 
-    </g> <!-- End Logo Graphic Group -->
+    </g>
 
     <!-- Status Block at Bottom Left -->
     <g transform="translate(18, 335)" class="mono" font-size="10.5">
@@ -253,11 +237,11 @@
           <text x="52" y="0" fill="#00FF66" font-weight="700">Credentials :</text>
           <text x="175" y="0" fill="#F8FAFC" font-weight="600">CEH Certified • Pentesting • Reverse Engineering</text>
         </g>
-        <!-- Row 4: Focus -->
+        <!-- Row 4: Current Focus (Updated strictly as requested) -->
         <g transform="translate(0, 84)">
           <text x="0" y="0" fill="#00FF66" font-weight="800">[FOC]</text>
           <text x="52" y="0" fill="#00FF66" font-weight="700">Current Focus:</text>
-          <text x="175" y="0" fill="#F8FAFC" font-weight="600">AI Security Research, DuckyBuilder &amp; SOC Automation</text>
+          <text x="175" y="0" fill="#FCEE09" font-weight="800">Red Team Research, AI Security &amp; SOC</text>
         </g>
       </g>
 

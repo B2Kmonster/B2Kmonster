@@ -15,10 +15,11 @@
 
 ---
 
-## 🎯 ABOUT ME
+## 🎯 ABOUT ME & CURRENT FOCUS
 
 ```bash
 cat << 'EOF'
+> CURRENT FOCUS: Red Team Research, AI Security, & SOC Incident Response Pipelines.
 > Computer Science Engineering student specializing in Cybersecurity, AI Security Research, & Red Team Operations.
 > Certified Ethical Hacker (CEH) with hands-on expertise in penetration testing, malware reverse engineering, 
   automated SOC incident triage, Windows post-exploitation, & embedded hardware security.
@@ -34,6 +35,7 @@ EOF
 +------------------------+-----------------------------------------------------------------------------------+
 | CATEGORY               | SECURITY TOOLS & STACK                                                            |
 +------------------------+-----------------------------------------------------------------------------------+
+| Current Focus          | Red Team Research, AI Security, & SOC Incident Response                          |
 | Programming & Scripts  | Python, Bash, PowerShell, C / C++, SQL, JavaScript, HTML5 / CSS3                  |
 | Cybersecurity Domains   | Penetration Testing, Malware Analysis, Reverse Eng, SOC Triage, AI Security       |
 | Offensive Security     | Burp Suite Pro, OWASP ZAP, Nmap, Wireshark, Metasploit, SQLMap, Gobuster, Hydra    |
